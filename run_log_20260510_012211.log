@@ -1,0 +1,59 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20260510012211
+Username: DESKTOP-HS8GE90\justin
+RunAs User: DESKTOP-HS8GE90\justin
+Configuration Name: 
+Machine: DESKTOP-HS8GE90 (Microsoft Windows NT 10.0.19045.0)
+Host Application: powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\Users\justin\Documents\Coding\stemqueue\run_stemqueue.ps1
+Process ID: 19468
+PSVersion: 5.1.19041.6456
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.6456
+BuildVersion: 10.0.19041.6456
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\justin\Documents\Coding\stemqueue\run_log_20260510_012211.log
+Current working directory: C:\WINDOWS\system32
+Current working directory (after Set-Location): C:\Users\justin\Documents\Coding\stemqueue
+Activating virtual environment...
+Virtual environment activated.
+Checking for audio-separator installation...
+
+audio-separator is already installed.
+Checking for onnxruntime installation...
+
+onnxruntime is already installed.
+WARNING: FFmpeg bin path not found at 'C:\ffmpeg\ffmpeg-master-latest-win64-gpl\bin'. Please verify your FFmpeg installation and update the script if necessary.
+Starting audio separation process...
+Python executable: C:\Users\justin\Documents\Coding\stemqueue\venv\Scripts\python.exe
+Main script: main.py
+Queue file: task_queue.json
+Successfully loaded queue from task_queue.json
+Starting audio separation queue with 2 tasks...
+
+--- Task 1/2 ---
+Processing 'E:\shorter_term_storage\Music\Phish\A Picture of Nectar\06 Manteca.mp3' with model 'htdemucs_ft'...
+Error processing 'E:\shorter_term_storage\Music\Phish\A Picture of Nectar\06 Manteca.mp3': Separator.__init__() got an u
+nexpected keyword argument 'stems'
+Traceback (most recent call last):
+  File "C:\Users\justin\Documents\Coding\stemqueue\main.py", line 52, in process_audio_file
+    separator = Separator(
+TypeError: Separator.__init__() got an unexpected keyword argument 'stems'
+
+--- Task 2/2 ---
+Processing 'E:\shorter_term_storage\Music\IncomingMusic\07 - The Black Keys - The Big Come Up - 07 - Leavin' Trunk.mp3'
+with model 'htdemucs_ft'...
+Error processing 'E:\shorter_term_storage\Music\IncomingMusic\07 - The Black Keys - The Big Come Up - 07 - Leavin' Trunk
+.mp3': Separator.__init__() got an unexpected keyword argument 'stems'
+Traceback (most recent call last):
+  File "C:\Users\justin\Documents\Coding\stemqueue\main.py", line 52, in process_audio_file
+    separator = Separator(
+TypeError: Separator.__init__() got an unexpected keyword argument 'stems'
+
+All tasks in the queue have been processed.
+Python script finished successfully.
+Script finished.

@@ -1,51 +1,201 @@
 import os
 import json
 import argparse
+import traceback
+import logging
+import re
+from pydub import AudioSegment
+
+# Configure the root logger to DEBUG level to see all debug messages
+logging.basicConfig(level=logging.DEBUG)
+
 from audio_separator.separator import Separator
 
-def process_audio_file(task):
-    """
-    Processes a single audio file using audio-separator based on the provided task.
+# Helper function for mixing stems
+def mix_stems(stem_paths, output_path, output_format):
+    combined_audio = None
+    for path in stem_paths:
+        if not os.path.exists(path):
+            logging.warning(f"Stem file not found for mixing: {path}")
+            continue
+        try:
+            audio_segment = AudioSegment.from_file(path)
+            if combined_audio is None:
+                combined_audio = audio_segment
+            else:
+                # Ensure same frame rate and channels before mixing
+                if audio_segment.frame_rate != combined_audio.frame_rate:
+                    audio_segment = audio_segment.set_frame_rate(combined_audio.frame_rate)
+                if audio_segment.channels != combined_audio.channels:
+                    audio_segment = audio_segment.set_channels(combined_audio.channels)
+                combined_audio = combined_audio.overlay(audio_segment)
+        except Exception as e:
+            logging.error(f"Error loading or mixing stem {path}: {e}")
+            return None
 
-    Args:
-        task (dict): A dictionary containing task details:
-                     - 'input_file': Path to the input audio file.
-                     - 'model_name': Name of the model to use (e.g., 'MDXNet', 'Demucs').
-                     - 'output_dir': Directory where separated stems will be saved.
-                     - 'stems': Optional list of stems to separate (e.g., ['vocals', 'drums']).
-                                If not provided, all available stems for the model will be separated.
-                     - 'output_format': Optional output format (e.g., 'WAV', 'MP3'). Defaults to 'WAV'.
-                     - 'output_bitrate': Optional output bitrate for MP3 (e.g., 320). Defaults to 256.
-    """
+    if combined_audio:
+        try:
+            export_params = {}
+            if output_format.lower() == "mp3":
+                export_params["bitrate"] = "256k" # Default to 256k for mixing
+            
+            combined_audio.export(output_path, format=output_format.lower(), **export_params)
+            return output_path
+        except Exception as e:
+            logging.error(f"Error exporting mixed audio to {output_path}: {e}")
+            return None
+    return None
+
+# Helper function to find a stem file by its type from a list of paths
+def _get_stem_path_by_type(output_files_list, stem_type_lower):
+    logging.debug(f"[_get_stem_path_by_type] Searching for stem '{stem_type_lower}' in list of files.")
+    for f_path in output_files_list:
+        base_name = os.path.basename(f_path)
+        logging.debug(f"  [_get_stem_path_by_type] Checking file: '{base_name}'")
+        # Robust regex to capture content inside the last parentheses before the extension
+        # This handles patterns like "(StemType).ext" or "(StemType)_ModelName.ext"
+        # The pattern looks for (anything_not_a_closing_paren) followed by )
+        # Then it allows for any characters that are not a dot (like _ModelName)
+        # Then it looks for a literal dot and one or more non-dot characters until the end of the string (the extension)
+        stem_name_match = re.search(r'\(([^)]+)\)[^.]*\.[^.]+$', base_name)
+        if stem_name_match:
+            extracted_stem_name = stem_name_match.group(1).lower()
+            logging.debug(f"    [_get_stem_path_by_type] Extracted stem name: '{extracted_stem_name}' from '{base_name}'")
+
+            if extracted_stem_name == stem_type_lower:
+                logging.debug(f"    [_get_stem_path_by_type] Match found for '{stem_type_lower}': '{f_path}'")
+                return f_path
+        else:
+            logging.debug(f"    [_get_stem_path_by_type] No stem name pattern found in: '{base_name}'")
+    logging.debug(f"[_get_stem_path_by_type] Stem '{stem_type_lower}' not found in the provided list.")
+    return None
+
+def process_audio_file(task):
     input_file = task['input_file']
-    model_name = task['model_name']
+    model_name_friendly = task['model_name']
     output_dir = task['output_dir']
-    stems = task.get('stems')
+    stems_from_task = task.get('stems')
     output_format = task.get('output_format', 'WAV')
-    output_bitrate = task.get('output_bitrate', 256)
 
     if not os.path.exists(input_file):
         print(f"Error: Input file not found: {input_file}")
         return
 
-    # Create output directory if it doesn't exist
     os.makedirs(output_dir, exist_ok=True)
-    print(f"Processing '{input_file}' with model '{model_name}'...")
+    print(f"Processing '{input_file}' with model '{model_name_friendly}'...")
 
     try:
+        # Initialize Separator to always output ALL default stems for the model
+        # This is the most reliable way with audio-separator 0.44.1
         separator = Separator(
-            log_level="INFO",
-            model_name=model_name,
+            log_level=logging.DEBUG, # Kept at DEBUG for verbose logging
             output_dir=output_dir,
             output_format=output_format,
-            output_bitrate=output_bitrate,
-            stems=stems
+            # output_bitrate removed to let the library use its default for MP3
+            # stems, output_single_stem, invert_using_spec are NOT passed here
+            # to ensure all default stems are generated by the model.
+            chunk_duration=None, # Changed to None to disable internal chunking
+            use_soundfile=True # Kept use_soundfile=True
         )
-        separator.load_model()
-        separator.separate(input_file)
-        print(f"Successfully processed '{input_file}'. Output saved to '{output_dir}'")
+
+        supported_models = separator.list_supported_model_files()
+        model_filename_actual = None
+        for model_type, models_dict in supported_models.items():
+            for friendly_name, model_info in models_dict.items():
+                if model_name_friendly.lower() in friendly_name.lower():
+                    model_filename_actual = model_info['filename']
+                    print(f"Found actual model filename '{model_filename_actual}' for friendly name '{model_name_friendly}' (Type: {model_type})")
+                    break
+            if model_filename_actual:
+                break
+
+        if not model_filename_actual:
+            raise ValueError(f"Model '{model_name_friendly}' not found in supported models list.")
+
+        separator.load_model(model_filename_actual)
+        
+        # This call will now produce ALL default stems (vocals, drums, bass, other for htdemucs_ft)
+        # without internal chunking by audio-separator
+        all_output_files = separator.separate(input_file)
+        print(f"Successfully processed '{input_file}'. All default stems saved to '{output_dir}'")
+        logging.debug(f"[process_audio_file] all_output_files reported by separator: {all_output_files}")
+
+        base_filename = os.path.splitext(os.path.basename(input_file))[0]
+        final_output_paths = []
+        
+        # List files actually in the output directory
+        files_in_output_dir = [os.path.join(output_dir, f) for f in os.listdir(output_dir) if os.path.isfile(os.path.join(output_dir, f))]
+        logging.debug(f"[process_audio_file] Files found in output directory '{output_dir}': {files_in_output_dir}")
+
+        # Use files_in_output_dir for matching, as all_output_files might not be absolute paths or might be cleaned up
+        files_to_consider_for_matching = files_in_output_dir
+        
+        files_to_remove = list(files_in_output_dir) # Start with all files in output_dir to remove, then remove what we keep
+
+        # --- Post-processing based on stems_from_task ---
+        if stems_from_task is not None and isinstance(stems_from_task, list) and len(stems_from_task) > 0:
+            print(f"Processing custom stem output request: {stems_from_task}")
+            for requested_output_name in stems_from_task:
+                if '+' in requested_output_name: # This is a combination of stems
+                    individual_stem_types = [s.strip().lower() for s in requested_output_name.split('+')]
+                    stems_to_mix_paths = []
+                    
+                    for stem_type in individual_stem_types:
+                        path = _get_stem_path_by_type(files_to_consider_for_matching, stem_type)
+                        if path:
+                            stems_to_mix_paths.append(path)
+                        else:
+                            print(f"Warning: Individual stem '{stem_type}' not found for combination '{requested_output_name}'. It will be omitted from the mix.")
+                    
+                    if stems_to_mix_paths:
+                        mixed_output_filename = f"{base_filename}_({requested_output_name.replace('+', '_')}).{output_format.lower()}"
+                        mixed_output_path = os.path.join(output_dir, mixed_output_filename)
+                        
+                        print(f"Mixing {len(stems_to_mix_paths)} stems for '{requested_output_name}'...")
+                        mixed_path = mix_stems(stems_to_mix_paths, mixed_output_path, output_format)
+
+                        if mixed_path:
+                            final_output_paths.append(mixed_path)
+                            print(f"Successfully created mixed track: {mixed_path}")
+                            # Remove individual mixed stems from the files_to_remove list
+                            for p in stems_to_mix_paths:
+                                if p in files_to_remove:
+                                    files_to_remove.remove(p)
+                        else:
+                            print(f"Failed to create mixed track for '{requested_output_name}'. Keeping individual components if they exist.")
+                            # If mixing fails, don't remove the individual components, let them be part of the cleanup if not explicitly requested elsewhere
+                    else:
+                        print(f"Warning: No valid individual stems found to mix for '{requested_output_name}'. No mixed track will be created.")
+
+                else: # This is a single stem request
+                    requested_stem_type = requested_output_name.strip().lower()
+                    path = _get_stem_path_by_type(files_to_consider_for_matching, requested_stem_type)
+                    if path:
+                        final_output_paths.append(path)
+                        if path in files_to_remove:
+                            files_to_remove.remove(path) # Don't remove this file
+                        print(f"Keeping single stem: {requested_stem_type}")
+                    else:
+                        print(f"Warning: Requested single stem '{requested_stem_type}' not found. It will not be included in the final output.")
+        else: # stems_from_task is None or empty list, keep all default outputs
+            print("No specific stems requested. Keeping all default outputs.")
+            final_output_paths.extend(files_in_output_dir) # Keep all files found
+            files_to_remove = [] # Don't remove anything if keeping all
+
+        # Clean up intermediate files that were not part of the final_output_paths
+        for path_to_remove in files_to_remove:
+            if path_to_remove and os.path.exists(path_to_remove):
+                try:
+                    os.remove(path_to_remove)
+                    print(f"Removed intermediate file: {path_to_remove}")
+                except Exception as e:
+                    print(f"Error removing intermediate file {path_to_remove}: {e}")
+        
+        print(f"Final output files for '{base_filename}': {final_output_paths}")
+
     except Exception as e:
         print(f"Error processing '{input_file}': {e}")
+        traceback.print_exc()
 
 def load_queue_from_json(file_path):
     """

@@ -1,14 +1,14 @@
 [
   {
     "input_file": "C:/Users/justin/Documents/Coding/stemqueue/audio_files/song1.mp3",
-    "model_name": "MDXNet",
+    "model_name": "htdemucs_ft",
     "output_dir": "C:/Users/justin/Documents/Coding/stemqueue/output/song1_stems",
     "stems": null,
     "output_format": "WAV"
   },
   {
     "input_file": "C:/Users/justin/Documents/Coding/stemqueue/audio_files/song2.wav",
-    "model_name": "Demucs",
+    "model_name": "htdemucs_ft",
     "output_dir": "C:/Users/justin/Documents/Coding/stemqueue/output/song2_drums_only",
     "stems": ["drums"],
     "output_format": "MP3",
@@ -16,7 +16,7 @@
   },
   {
     "input_file": "C:/Users/justin/Documents/Coding/stemqueue/audio_files/song3.flac",
-    "model_name": "Demucs",
+    "model_name": "htdemucs_ft",
     "output_dir": "C:/Users/justin/Documents/Coding/stemqueue/output/song3_vocals_bass",
     "stems": ["vocals", "bass"],
     "output_format": "WAV"

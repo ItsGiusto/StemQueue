@@ -1,0 +1,173 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20260510190534
+Username: DESKTOP-HS8GE90\justin
+RunAs User: DESKTOP-HS8GE90\justin
+Configuration Name: 
+Machine: DESKTOP-HS8GE90 (Microsoft Windows NT 10.0.19045.0)
+Host Application: powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\Users\justin\Documents\Coding\stemqueue\run_stemqueue.ps1
+Process ID: 11320
+PSVersion: 5.1.19041.6456
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.6456
+BuildVersion: 10.0.19041.6456
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\justin\Documents\Coding\stemqueue\run_log_20260510_190534.log
+Current working directory: C:\WINDOWS\system32
+Current working directory (after Set-Location): C:\Users\justin\Documents\Coding\stemqueue
+Activating virtual environment...
+Virtual environment activated.
+Upgrading pip within the virtual environment...
+Requirement already satisfied: pip in .\venv\lib\site-packages (26.1.1)
+pip upgraded successfully.
+Attempting to install/upgrade audio-separator to the latest available version...
+Requirement already satisfied: audio-separator in .\venv\lib\site-packages (0.44.1)
+Requirement already satisfied: beartype<0.19.0,>=0.18.5 in .\venv\lib\site-packages (from audio-separator) (0.18.5)
+Requirement already satisfied: diffq-fixed>=0.2 in .\venv\lib\site-packages (from audio-separator) (0.2.4)
+Requirement already satisfied: einops>=0.7 in .\venv\lib\site-packages (from audio-separator) (0.8.2)
+Requirement already satisfied: julius>=0.2 in .\venv\lib\site-packages (from audio-separator) (0.2.7)
+Requirement already satisfied: librosa>=0.10 in .\venv\lib\site-packages (from audio-separator) (0.11.0)
+Requirement already satisfied: ml_collections in .\venv\lib\site-packages (from audio-separator) (1.1.0)
+Requirement already satisfied: numpy>=2 in .\venv\lib\site-packages (from audio-separator) (2.2.6)
+Requirement already satisfied: onnx-weekly in .\venv\lib\site-packages (from audio-separator) (1.22.0.dev20260504)
+Requirement already satisfied: onnx2torch-py313>=1.6 in .\venv\lib\site-packages (from audio-separator) (1.6.0)
+Requirement already satisfied: pydub>=0.25 in .\venv\lib\site-packages (from audio-separator) (0.25.1)
+Requirement already satisfied: pyyaml in .\venv\lib\site-packages (from audio-separator) (6.0.3)
+Requirement already satisfied: requests>=2 in .\venv\lib\site-packages (from audio-separator) (2.33.1)
+Requirement already satisfied: resampy>=0.4 in .\venv\lib\site-packages (from audio-separator) (0.4.3)
+Requirement already satisfied: rotary-embedding-torch<0.7.0,>=0.6.1 in .\venv\lib\site-packages (from audio-separator) (
+0.6.5)
+Requirement already satisfied: samplerate==0.1.0 in .\venv\lib\site-packages (from audio-separator) (0.1.0)
+Requirement already satisfied: scipy<2.0.0,>=1.13.0 in .\venv\lib\site-packages (from audio-separator) (1.15.3)
+Requirement already satisfied: six>=1.16 in .\venv\lib\site-packages (from audio-separator) (1.17.0)
+Requirement already satisfied: soundfile>=0.12 in .\venv\lib\site-packages (from audio-separator) (0.13.1)
+Requirement already satisfied: torch>=2.3 in .\venv\lib\site-packages (from audio-separator) (2.11.0)
+Requirement already satisfied: tqdm in .\venv\lib\site-packages (from audio-separator) (4.67.3)
+Requirement already satisfied: cffi>=1.0.0 in .\venv\lib\site-packages (from samplerate==0.1.0->audio-separator) (2.0.0)
+
+Requirement already satisfied: pycparser in .\venv\lib\site-packages (from cffi>=1.0.0->samplerate==0.1.0->audio-separat
+or) (3.0)
+Requirement already satisfied: Cython in .\venv\lib\site-packages (from diffq-fixed>=0.2->audio-separator) (3.2.4)
+Requirement already satisfied: audioread>=2.1.9 in .\venv\lib\site-packages (from librosa>=0.10->audio-separator) (3.1.0
+)
+Requirement already satisfied: numba>=0.51.0 in .\venv\lib\site-packages (from librosa>=0.10->audio-separator) (0.65.1)
+Requirement already satisfied: scikit-learn>=1.1.0 in .\venv\lib\site-packages (from librosa>=0.10->audio-separator) (1.
+7.2)
+Requirement already satisfied: joblib>=1.0 in .\venv\lib\site-packages (from librosa>=0.10->audio-separator) (1.5.3)
+Requirement already satisfied: decorator>=4.3.0 in .\venv\lib\site-packages (from librosa>=0.10->audio-separator) (5.2.1
+)
+Requirement already satisfied: pooch>=1.1 in .\venv\lib\site-packages (from librosa>=0.10->audio-separator) (1.9.0)
+Requirement already satisfied: soxr>=0.3.2 in .\venv\lib\site-packages (from librosa>=0.10->audio-separator) (1.1.0)
+Requirement already satisfied: typing_extensions>=4.1.1 in .\venv\lib\site-packages (from librosa>=0.10->audio-separator
+) (4.15.0)
+Requirement already satisfied: lazy_loader>=0.1 in .\venv\lib\site-packages (from librosa>=0.10->audio-separator) (0.5)
+Requirement already satisfied: msgpack>=1.0 in .\venv\lib\site-packages (from librosa>=0.10->audio-separator) (1.1.2)
+Requirement already satisfied: packaging in .\venv\lib\site-packages (from lazy_loader>=0.1->librosa>=0.10->audio-separa
+tor) (26.2)
+Requirement already satisfied: llvmlite<0.48,>=0.47.0dev0 in .\venv\lib\site-packages (from numba>=0.51.0->librosa>=0.10
+->audio-separator) (0.47.0)
+Requirement already satisfied: torchvision>=0.9.0 in .\venv\lib\site-packages (from onnx2torch-py313>=1.6->audio-separat
+or) (0.26.0)
+Requirement already satisfied: platformdirs>=2.5.0 in .\venv\lib\site-packages (from pooch>=1.1->librosa>=0.10->audio-se
+parator) (4.9.6)
+Requirement already satisfied: charset_normalizer<4,>=2 in .\venv\lib\site-packages (from requests>=2->audio-separator)
+(3.4.7)
+Requirement already satisfied: idna<4,>=2.5 in .\venv\lib\site-packages (from requests>=2->audio-separator) (3.13)
+Requirement already satisfied: urllib3<3,>=1.26 in .\venv\lib\site-packages (from requests>=2->audio-separator) (2.7.0)
+Requirement already satisfied: certifi>=2023.5.7 in .\venv\lib\site-packages (from requests>=2->audio-separator) (2026.4
+.22)
+Requirement already satisfied: threadpoolctl>=3.1.0 in .\venv\lib\site-packages (from scikit-learn>=1.1.0->librosa>=0.10
+->audio-separator) (3.6.0)
+Requirement already satisfied: filelock in .\venv\lib\site-packages (from torch>=2.3->audio-separator) (3.29.0)
+Requirement already satisfied: setuptools<82 in .\venv\lib\site-packages (from torch>=2.3->audio-separator) (65.5.0)
+Requirement already satisfied: sympy>=1.13.3 in .\venv\lib\site-packages (from torch>=2.3->audio-separator) (1.14.0)
+Requirement already satisfied: networkx>=2.5.1 in .\venv\lib\site-packages (from torch>=2.3->audio-separator) (3.4.2)
+Requirement already satisfied: jinja2 in .\venv\lib\site-packages (from torch>=2.3->audio-separator) (3.1.6)
+Requirement already satisfied: fsspec>=0.8.5 in .\venv\lib\site-packages (from torch>=2.3->audio-separator) (2026.4.0)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in .\venv\lib\site-packages (from sympy>=1.13.3->torch>=2.3->audio-sep
+arator) (1.3.0)
+Requirement already satisfied: pillow!=8.3.*,>=5.3.0 in .\venv\lib\site-packages (from torchvision>=0.9.0->onnx2torch-py
+313>=1.6->audio-separator) (12.2.0)
+Requirement already satisfied: MarkupSafe>=2.0 in .\venv\lib\site-packages (from jinja2->torch>=2.3->audio-separator) (3
+.0.3)
+Requirement already satisfied: absl-py in .\venv\lib\site-packages (from ml_collections->audio-separator) (2.4.0)
+Requirement already satisfied: protobuf>=4.25.1 in .\venv\lib\site-packages (from onnx-weekly->audio-separator) (7.34.1)
+
+Requirement already satisfied: ml_dtypes>=0.5.0 in .\venv\lib\site-packages (from onnx-weekly->audio-separator) (0.5.4)
+Requirement already satisfied: colorama in .\venv\lib\site-packages (from tqdm->audio-separator) (0.4.6)
+audio-separator installed/upgraded successfully.
+Verifying installed audio-separator version...
+Installed audio-separator version:
+Listing all installed packages (pip freeze):
+absl-py==2.4.0
+audio-separator==0.44.1
+audioread==3.1.0
+beartype==0.18.5
+certifi==2026.4.22
+cffi==2.0.0
+charset-normalizer==3.4.7
+colorama==0.4.6
+coloredlogs==15.0.1
+Cython==3.2.4
+decorator==5.2.1
+diffq-fixed==0.2.4
+einops==0.8.2
+filelock==3.29.0
+flatbuffers==25.12.19
+fsspec==2026.4.0
+humanfriendly==10.0
+idna==3.13
+Jinja2==3.1.6
+joblib==1.5.3
+julius==0.2.7
+lazy-loader==0.5
+librosa==0.11.0
+llvmlite==0.47.0
+MarkupSafe==3.0.3
+ml_collections==1.1.0
+ml_dtypes==0.5.4
+mpmath==1.3.0
+msgpack==1.1.2
+networkx==3.4.2
+numba==0.65.1
+numpy==2.2.6
+onnx-weekly==1.22.0.dev20260504
+onnx2torch-py313==1.6.0
+onnxruntime==1.23.2
+packaging==26.2
+pillow==12.2.0
+platformdirs==4.9.6
+pooch==1.9.0
+protobuf==7.34.1
+pycparser==3.0
+pydub==0.25.1
+pyreadline3==3.5.4
+PyYAML==6.0.3
+requests==2.33.1
+resampy==0.4.3
+rotary-embedding-torch==0.6.5
+samplerate==0.1.0
+scikit-learn==1.7.2
+scipy==1.15.3
+six==1.17.0
+soundfile==0.13.1
+soxr==1.1.0
+sympy==1.14.0
+threadpoolctl==3.6.0
+torch==2.11.0
+torchvision==0.26.0
+tqdm==4.67.3
+typing_extensions==4.15.0
+urllib3==2.7.0
+Checking for onnxruntime installation...
+
+onnxruntime is already installed.
+WARNING: FFmpeg bin path not found at 'C:\ffmpeg\ffmpeg-master-latest-win64-gpl\bin'. Please verify your FFmpeg installation and update the script if necessary.
+Starting audio separation process...
+Python executable: C:\Users\justin\Documents\Coding\stemqueue\venv\Scripts\python.exe
+Main script: main.py
+Queue file: task_queue.json

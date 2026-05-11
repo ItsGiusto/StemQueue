@@ -1,0 +1,443 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20260510002114
+Username: DESKTOP-HS8GE90\justin
+RunAs User: DESKTOP-HS8GE90\justin
+Configuration Name: 
+Machine: DESKTOP-HS8GE90 (Microsoft Windows NT 10.0.19045.0)
+Host Application: powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\Users\justin\Documents\Coding\stemqueue\run_stemqueue.ps1
+Process ID: 13084
+PSVersion: 5.1.19041.6456
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.6456
+BuildVersion: 10.0.19041.6456
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\justin\Documents\Coding\stemqueue\run_log_20260510_002114.log
+Current working directory: C:\WINDOWS\system32
+Current working directory (after Set-Location): C:\Users\justin\Documents\Coding\stemqueue
+Activating virtual environment...
+Virtual environment activated.
+Checking for audio-separator installation...
+
+audio-separator is already installed.
+Checking for onnxruntime installation...
+
+onnxruntime is already installed.
+WARNING: FFmpeg bin path not found at 'C:\ffmpeg\ffmpeg-master-latest-win64-gpl\bin'. Please verify your FFmpeg installation and update the script if necessary.
+Starting audio separation process...
+Python executable: C:\Users\justin\Documents\Coding\stemqueue\venv\Scripts\python.exe
+Main script: main.py
+Queue file: task_queue.json
+Successfully loaded queue from task_queue.json
+Starting audio separation queue with 1 tasks...
+
+--- Task 1/1 ---
+Processing 'E:\shorter_term_storage\Music\IncomingMusic\07 - The Black Keys - The Big Come Up - 07 - Leavin' Trunk.mp3'
+with model 'htdemucs_ft'...
+2026-05-10 00:21:25,375 - INFO - separator - Separator version 0.44.1 instantiating with output_dir: C:\Users\justin\Dro
+pbox\stems\leavintrunk, output_format: MP3
+2026-05-10 00:21:25,375 - INFO - separator - Using model directory from model_file_dir parameter: /tmp/audio-separator-m
+odels/
+2026-05-10 00:21:25,377 - INFO - separator - Operating System: Windows 10.0.19045
+2026-05-10 00:21:25,377 - INFO - separator - System: Windows Node: DESKTOP-HS8GE90 Release: 10 Machine: AMD64 Proc: Inte
+l64 Family 6 Model 60 Stepping 3, GenuineIntel
+2026-05-10 00:21:25,377 - INFO - separator - Python Version: 3.10.11
+2026-05-10 00:21:25,377 - INFO - separator - PyTorch Version: 2.11.0+cpu
+2026-05-10 00:21:25,559 - INFO - separator - FFmpeg installed: ffmpeg version 2026-05-06-git-f2e5eff3ff-essentials_build
+-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers
+2026-05-10 00:21:25,576 - INFO - separator - ONNX Runtime CPU package installed with version: 1.23.2
+2026-05-10 00:21:25,581 - INFO - separator - No hardware acceleration could be configured, running in CPU mode
+Found actual model filename 'htdemucs_ft.yaml' for friendly name 'htdemucs_ft' (Type: Demucs)
+2026-05-10 00:21:25,676 - INFO - separator - Loading model htdemucs_ft.yaml...
+2026-05-10 00:21:25,793 - INFO - demucs_separator - Demucs Separator initialisation complete
+2026-05-10 00:21:25,793 - INFO - separator - Load model duration: 00:00:00
+2026-05-10 00:21:25,794 - INFO - separator - Processing file: E:\shorter_term_storage\Music\IncomingMusic\07 - The Black
+ Keys - The Big Come Up - 07 - Leavin' Trunk.mp3
+2026-05-10 00:21:27,473 - INFO - separator - File duration 180.2s exceeds chunk size 10s, using chunked processing
+2026-05-10 00:21:28,658 - INFO - audio_chunking - Splitting 180.2s audio into 19 chunks of 10.0s each
+2026-05-10 00:21:33,448 - INFO - separator - Processing chunk 1/19: C:\Users\justin\AppData\Local\Temp\audio-separator-c
+hunks-f4avgtgb\chunk_0000.mp3
+2026-05-10 00:21:33,448 - INFO - separator - Starting separation process for audio_file_path: C:\Users\justin\AppData\Lo
+cal\Temp\audio-separator-chunks-f4avgtgb\chunk_0000.mp3
+2026-05-10 00:21:33,449 - INFO - common_separator - Input audio subtype: MPEG_LAYER_III
+2026-05-10 00:21:33,449 - WARNING - common_separator - Unknown audio subtype MPEG_LAYER_III, defaulting to 16-bit output
+2026-05-10 00:21:33,450 - INFO - common_separator - Detected input bit depth: 16-bit
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.39s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.45s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.10s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.16s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:09<00:00,  4.94s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.41s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.92s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.24s/it]
+2026-05-10 00:22:51,197 - INFO - common_separator - Audio duration is 0.00 hours (10.00 seconds).
+2026-05-10 00:22:51,197 - INFO - common_separator - Using pydub for writing.
+2026-05-10 00:22:51,204 - INFO - common_separator - Writing output with 16-bit depth
+2026-05-10 00:22:51,975 - INFO - common_separator - Clearing input audio file paths, sources and stems...
+2026-05-10 00:22:51,975 - INFO - separator - Separation duration: 00:01:18
+2026-05-10 00:22:52,080 - INFO - separator - Processing chunk 2/19: C:\Users\justin\AppData\Local\Temp\audio-separator-c
+hunks-f4avgtgb\chunk_0001.mp3
+2026-05-10 00:22:52,080 - INFO - separator - Starting separation process for audio_file_path: C:\Users\justin\AppData\Lo
+cal\Temp\audio-separator-chunks-f4avgtgb\chunk_0001.mp3
+2026-05-10 00:22:52,096 - INFO - common_separator - Input audio subtype: MPEG_LAYER_III
+2026-05-10 00:22:52,096 - WARNING - common_separator - Unknown audio subtype MPEG_LAYER_III, defaulting to 16-bit output
+2026-05-10 00:22:52,098 - INFO - common_separator - Detected input bit depth: 16-bit
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:09<00:00,  4.64s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:09<00:00,  4.51s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.11s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.04s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.12s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.08s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.94s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  4.00s/it]
+2026-05-10 00:24:05,388 - INFO - common_separator - Audio duration is 0.00 hours (10.00 seconds).
+2026-05-10 00:24:05,389 - INFO - common_separator - Using pydub for writing.
+2026-05-10 00:24:05,391 - INFO - common_separator - Writing output with 16-bit depth
+2026-05-10 00:24:05,838 - INFO - common_separator - Clearing input audio file paths, sources and stems...
+2026-05-10 00:24:05,839 - INFO - separator - Separation duration: 00:01:13
+2026-05-10 00:24:05,934 - INFO - separator - Processing chunk 3/19: C:\Users\justin\AppData\Local\Temp\audio-separator-c
+hunks-f4avgtgb\chunk_0002.mp3
+2026-05-10 00:24:05,934 - INFO - separator - Starting separation process for audio_file_path: C:\Users\justin\AppData\Lo
+cal\Temp\audio-separator-chunks-f4avgtgb\chunk_0002.mp3
+2026-05-10 00:24:05,936 - INFO - common_separator - Input audio subtype: MPEG_LAYER_III
+2026-05-10 00:24:05,936 - WARNING - common_separator - Unknown audio subtype MPEG_LAYER_III, defaulting to 16-bit output
+2026-05-10 00:24:05,936 - INFO - common_separator - Detected input bit depth: 16-bit
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.21s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.99s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.05s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.98s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.03s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.36s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.93s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.97s/it]
+2026-05-10 00:25:15,459 - INFO - common_separator - Audio duration is 0.00 hours (10.00 seconds).
+2026-05-10 00:25:15,459 - INFO - common_separator - Using pydub for writing.
+2026-05-10 00:25:15,463 - INFO - common_separator - Writing output with 16-bit depth
+2026-05-10 00:25:15,909 - INFO - common_separator - Clearing input audio file paths, sources and stems...
+2026-05-10 00:25:15,909 - INFO - separator - Separation duration: 00:01:09
+2026-05-10 00:25:16,022 - INFO - separator - Processing chunk 4/19: C:\Users\justin\AppData\Local\Temp\audio-separator-c
+hunks-f4avgtgb\chunk_0003.mp3
+2026-05-10 00:25:16,022 - INFO - separator - Starting separation process for audio_file_path: C:\Users\justin\AppData\Lo
+cal\Temp\audio-separator-chunks-f4avgtgb\chunk_0003.mp3
+2026-05-10 00:25:16,025 - INFO - common_separator - Input audio subtype: MPEG_LAYER_III
+2026-05-10 00:25:16,026 - WARNING - common_separator - Unknown audio subtype MPEG_LAYER_III, defaulting to 16-bit output
+2026-05-10 00:25:16,027 - INFO - common_separator - Detected input bit depth: 16-bit
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.02s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.19s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.17s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.90s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.97s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.89s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.90s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.91s/it]
+2026-05-10 00:26:24,551 - INFO - common_separator - Audio duration is 0.00 hours (10.00 seconds).
+2026-05-10 00:26:24,551 - INFO - common_separator - Using pydub for writing.
+2026-05-10 00:26:24,554 - INFO - common_separator - Writing output with 16-bit depth
+2026-05-10 00:26:25,001 - INFO - common_separator - Clearing input audio file paths, sources and stems...
+2026-05-10 00:26:25,001 - INFO - separator - Separation duration: 00:01:08
+2026-05-10 00:26:25,094 - INFO - separator - Processing chunk 5/19: C:\Users\justin\AppData\Local\Temp\audio-separator-c
+hunks-f4avgtgb\chunk_0004.mp3
+2026-05-10 00:26:25,095 - INFO - separator - Starting separation process for audio_file_path: C:\Users\justin\AppData\Lo
+cal\Temp\audio-separator-chunks-f4avgtgb\chunk_0004.mp3
+2026-05-10 00:26:25,097 - INFO - common_separator - Input audio subtype: MPEG_LAYER_III
+2026-05-10 00:26:25,097 - WARNING - common_separator - Unknown audio subtype MPEG_LAYER_III, defaulting to 16-bit output
+2026-05-10 00:26:25,097 - INFO - common_separator - Detected input bit depth: 16-bit
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.24s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.03s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.96s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.90s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.89s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.02s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.97s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.91s/it]
+2026-05-10 00:27:33,442 - INFO - common_separator - Audio duration is 0.00 hours (10.00 seconds).
+2026-05-10 00:27:33,443 - INFO - common_separator - Using pydub for writing.
+2026-05-10 00:27:33,445 - INFO - common_separator - Writing output with 16-bit depth
+2026-05-10 00:27:33,898 - INFO - common_separator - Clearing input audio file paths, sources and stems...
+2026-05-10 00:27:33,898 - INFO - separator - Separation duration: 00:01:08
+2026-05-10 00:27:33,991 - INFO - separator - Processing chunk 6/19: C:\Users\justin\AppData\Local\Temp\audio-separator-c
+hunks-f4avgtgb\chunk_0005.mp3
+2026-05-10 00:27:33,992 - INFO - separator - Starting separation process for audio_file_path: C:\Users\justin\AppData\Lo
+cal\Temp\audio-separator-chunks-f4avgtgb\chunk_0005.mp3
+2026-05-10 00:27:33,995 - INFO - common_separator - Input audio subtype: MPEG_LAYER_III
+2026-05-10 00:27:33,996 - WARNING - common_separator - Unknown audio subtype MPEG_LAYER_III, defaulting to 16-bit output
+2026-05-10 00:27:33,996 - INFO - common_separator - Detected input bit depth: 16-bit
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.99s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.87s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.95s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.86s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.97s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.04s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.05s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:11<00:00,  5.73s/it]
+2026-05-10 00:28:45,427 - INFO - common_separator - Audio duration is 0.00 hours (10.00 seconds).
+2026-05-10 00:28:45,427 - INFO - common_separator - Using pydub for writing.
+2026-05-10 00:28:45,431 - INFO - common_separator - Writing output with 16-bit depth
+2026-05-10 00:28:45,929 - INFO - common_separator - Clearing input audio file paths, sources and stems...
+2026-05-10 00:28:45,929 - INFO - separator - Separation duration: 00:01:11
+2026-05-10 00:28:46,026 - INFO - separator - Processing chunk 7/19: C:\Users\justin\AppData\Local\Temp\audio-separator-c
+hunks-f4avgtgb\chunk_0006.mp3
+2026-05-10 00:28:46,026 - INFO - separator - Starting separation process for audio_file_path: C:\Users\justin\AppData\Lo
+cal\Temp\audio-separator-chunks-f4avgtgb\chunk_0006.mp3
+2026-05-10 00:28:46,030 - INFO - common_separator - Input audio subtype: MPEG_LAYER_III
+2026-05-10 00:28:46,030 - WARNING - common_separator - Unknown audio subtype MPEG_LAYER_III, defaulting to 16-bit output
+2026-05-10 00:28:46,031 - INFO - common_separator - Detected input bit depth: 16-bit
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:09<00:00,  4.95s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.41s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.27s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.32s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:09<00:00,  4.82s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:09<00:00,  4.76s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:10<00:00,  5.06s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:09<00:00,  4.55s/it]
+2026-05-10 00:30:05,027 - INFO - common_separator - Audio duration is 0.00 hours (10.00 seconds).
+2026-05-10 00:30:05,028 - INFO - common_separator - Using pydub for writing.
+2026-05-10 00:30:05,031 - INFO - common_separator - Writing output with 16-bit depth
+2026-05-10 00:30:05,546 - INFO - common_separator - Clearing input audio file paths, sources and stems...
+2026-05-10 00:30:05,547 - INFO - separator - Separation duration: 00:01:19
+2026-05-10 00:30:05,747 - INFO - separator - Processing chunk 8/19: C:\Users\justin\AppData\Local\Temp\audio-separator-c
+hunks-f4avgtgb\chunk_0007.mp3
+2026-05-10 00:30:05,748 - INFO - separator - Starting separation process for audio_file_path: C:\Users\justin\AppData\Lo
+cal\Temp\audio-separator-chunks-f4avgtgb\chunk_0007.mp3
+2026-05-10 00:30:05,751 - INFO - common_separator - Input audio subtype: MPEG_LAYER_III
+2026-05-10 00:30:05,752 - WARNING - common_separator - Unknown audio subtype MPEG_LAYER_III, defaulting to 16-bit output
+2026-05-10 00:30:05,752 - INFO - common_separator - Detected input bit depth: 16-bit
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.10s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.23s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:09<00:00,  4.71s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.98s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.99s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.93s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.94s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.98s/it]
+2026-05-10 00:31:16,548 - INFO - common_separator - Audio duration is 0.00 hours (10.00 seconds).
+2026-05-10 00:31:16,548 - INFO - common_separator - Using pydub for writing.
+2026-05-10 00:31:16,553 - INFO - common_separator - Writing output with 16-bit depth
+2026-05-10 00:31:17,032 - INFO - common_separator - Clearing input audio file paths, sources and stems...
+2026-05-10 00:31:17,032 - INFO - separator - Separation duration: 00:01:11
+2026-05-10 00:31:17,124 - INFO - separator - Processing chunk 9/19: C:\Users\justin\AppData\Local\Temp\audio-separator-c
+hunks-f4avgtgb\chunk_0008.mp3
+2026-05-10 00:31:17,124 - INFO - separator - Starting separation process for audio_file_path: C:\Users\justin\AppData\Lo
+cal\Temp\audio-separator-chunks-f4avgtgb\chunk_0008.mp3
+2026-05-10 00:31:17,127 - INFO - common_separator - Input audio subtype: MPEG_LAYER_III
+2026-05-10 00:31:17,128 - WARNING - common_separator - Unknown audio subtype MPEG_LAYER_III, defaulting to 16-bit output
+2026-05-10 00:31:17,128 - INFO - common_separator - Detected input bit depth: 16-bit
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.05s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.28s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.95s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.82s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.10s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.90s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.94s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.04s/it]
+2026-05-10 00:32:25,906 - INFO - common_separator - Audio duration is 0.00 hours (10.00 seconds).
+2026-05-10 00:32:25,906 - INFO - common_separator - Using pydub for writing.
+2026-05-10 00:32:25,910 - INFO - common_separator - Writing output with 16-bit depth
+2026-05-10 00:32:26,358 - INFO - common_separator - Clearing input audio file paths, sources and stems...
+2026-05-10 00:32:26,359 - INFO - separator - Separation duration: 00:01:09
+2026-05-10 00:32:26,453 - INFO - separator - Processing chunk 10/19: C:\Users\justin\AppData\Local\Temp\audio-separator-
+chunks-f4avgtgb\chunk_0009.mp3
+2026-05-10 00:32:26,453 - INFO - separator - Starting separation process for audio_file_path: C:\Users\justin\AppData\Lo
+cal\Temp\audio-separator-chunks-f4avgtgb\chunk_0009.mp3
+2026-05-10 00:32:26,456 - INFO - common_separator - Input audio subtype: MPEG_LAYER_III
+2026-05-10 00:32:26,457 - WARNING - common_separator - Unknown audio subtype MPEG_LAYER_III, defaulting to 16-bit output
+2026-05-10 00:32:26,458 - INFO - common_separator - Detected input bit depth: 16-bit
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.03s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.05s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.96s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.94s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.15s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.15s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.04s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.92s/it]
+2026-05-10 00:33:35,682 - INFO - common_separator - Audio duration is 0.00 hours (10.00 seconds).
+2026-05-10 00:33:35,683 - INFO - common_separator - Using pydub for writing.
+2026-05-10 00:33:35,687 - INFO - common_separator - Writing output with 16-bit depth
+2026-05-10 00:33:36,134 - INFO - common_separator - Clearing input audio file paths, sources and stems...
+2026-05-10 00:33:36,134 - INFO - separator - Separation duration: 00:01:09
+2026-05-10 00:33:36,226 - INFO - separator - Processing chunk 11/19: C:\Users\justin\AppData\Local\Temp\audio-separator-
+chunks-f4avgtgb\chunk_0010.mp3
+2026-05-10 00:33:36,226 - INFO - separator - Starting separation process for audio_file_path: C:\Users\justin\AppData\Lo
+cal\Temp\audio-separator-chunks-f4avgtgb\chunk_0010.mp3
+2026-05-10 00:33:36,229 - INFO - common_separator - Input audio subtype: MPEG_LAYER_III
+2026-05-10 00:33:36,230 - WARNING - common_separator - Unknown audio subtype MPEG_LAYER_III, defaulting to 16-bit output
+2026-05-10 00:33:36,230 - INFO - common_separator - Detected input bit depth: 16-bit
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.05s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.03s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.99s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.93s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.14s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.27s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.11s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.96s/it]
+2026-05-10 00:34:46,031 - INFO - common_separator - Audio duration is 0.00 hours (10.00 seconds).
+2026-05-10 00:34:46,032 - INFO - common_separator - Using pydub for writing.
+2026-05-10 00:34:46,036 - INFO - common_separator - Writing output with 16-bit depth
+2026-05-10 00:34:46,530 - INFO - common_separator - Clearing input audio file paths, sources and stems...
+2026-05-10 00:34:46,531 - INFO - separator - Separation duration: 00:01:10
+2026-05-10 00:34:46,621 - INFO - separator - Processing chunk 12/19: C:\Users\justin\AppData\Local\Temp\audio-separator-
+chunks-f4avgtgb\chunk_0011.mp3
+2026-05-10 00:34:46,621 - INFO - separator - Starting separation process for audio_file_path: C:\Users\justin\AppData\Lo
+cal\Temp\audio-separator-chunks-f4avgtgb\chunk_0011.mp3
+2026-05-10 00:34:46,625 - INFO - common_separator - Input audio subtype: MPEG_LAYER_III
+2026-05-10 00:34:46,625 - WARNING - common_separator - Unknown audio subtype MPEG_LAYER_III, defaulting to 16-bit output
+2026-05-10 00:34:46,626 - INFO - common_separator - Detected input bit depth: 16-bit
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.99s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.05s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.06s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.03s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.97s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.02s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.95s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.15s/it]
+2026-05-10 00:35:55,820 - INFO - common_separator - Audio duration is 0.00 hours (10.00 seconds).
+2026-05-10 00:35:55,820 - INFO - common_separator - Using pydub for writing.
+2026-05-10 00:35:55,824 - INFO - common_separator - Writing output with 16-bit depth
+2026-05-10 00:35:56,267 - INFO - common_separator - Clearing input audio file paths, sources and stems...
+2026-05-10 00:35:56,267 - INFO - separator - Separation duration: 00:01:09
+2026-05-10 00:35:56,360 - INFO - separator - Processing chunk 13/19: C:\Users\justin\AppData\Local\Temp\audio-separator-
+chunks-f4avgtgb\chunk_0012.mp3
+2026-05-10 00:35:56,360 - INFO - separator - Starting separation process for audio_file_path: C:\Users\justin\AppData\Lo
+cal\Temp\audio-separator-chunks-f4avgtgb\chunk_0012.mp3
+2026-05-10 00:35:56,363 - INFO - common_separator - Input audio subtype: MPEG_LAYER_III
+2026-05-10 00:35:56,364 - WARNING - common_separator - Unknown audio subtype MPEG_LAYER_III, defaulting to 16-bit output
+2026-05-10 00:35:56,365 - INFO - common_separator - Detected input bit depth: 16-bit
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:09<00:00,  4.98s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:09<00:00,  4.60s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.02s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.95s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.08s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.01s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.99s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.92s/it]
+2026-05-10 00:37:08,293 - INFO - common_separator - Audio duration is 0.00 hours (10.00 seconds).
+2026-05-10 00:37:08,293 - INFO - common_separator - Using pydub for writing.
+2026-05-10 00:37:08,298 - INFO - common_separator - Writing output with 16-bit depth
+2026-05-10 00:37:08,738 - INFO - common_separator - Clearing input audio file paths, sources and stems...
+2026-05-10 00:37:08,738 - INFO - separator - Separation duration: 00:01:12
+2026-05-10 00:37:08,834 - INFO - separator - Processing chunk 14/19: C:\Users\justin\AppData\Local\Temp\audio-separator-
+chunks-f4avgtgb\chunk_0013.mp3
+2026-05-10 00:37:08,835 - INFO - separator - Starting separation process for audio_file_path: C:\Users\justin\AppData\Lo
+cal\Temp\audio-separator-chunks-f4avgtgb\chunk_0013.mp3
+2026-05-10 00:37:08,839 - INFO - common_separator - Input audio subtype: MPEG_LAYER_III
+2026-05-10 00:37:08,839 - WARNING - common_separator - Unknown audio subtype MPEG_LAYER_III, defaulting to 16-bit output
+2026-05-10 00:37:08,840 - INFO - common_separator - Detected input bit depth: 16-bit
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.11s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.02s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.94s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  4.00s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.99s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  4.00s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.89s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.10s/it]
+2026-05-10 00:38:17,570 - INFO - common_separator - Audio duration is 0.00 hours (10.00 seconds).
+2026-05-10 00:38:17,570 - INFO - common_separator - Using pydub for writing.
+2026-05-10 00:38:17,575 - INFO - common_separator - Writing output with 16-bit depth
+2026-05-10 00:38:18,034 - INFO - common_separator - Clearing input audio file paths, sources and stems...
+2026-05-10 00:38:18,034 - INFO - separator - Separation duration: 00:01:09
+2026-05-10 00:38:18,127 - INFO - separator - Processing chunk 15/19: C:\Users\justin\AppData\Local\Temp\audio-separator-
+chunks-f4avgtgb\chunk_0014.mp3
+2026-05-10 00:38:18,127 - INFO - separator - Starting separation process for audio_file_path: C:\Users\justin\AppData\Lo
+cal\Temp\audio-separator-chunks-f4avgtgb\chunk_0014.mp3
+2026-05-10 00:38:18,130 - INFO - common_separator - Input audio subtype: MPEG_LAYER_III
+2026-05-10 00:38:18,131 - WARNING - common_separator - Unknown audio subtype MPEG_LAYER_III, defaulting to 16-bit output
+2026-05-10 00:38:18,132 - INFO - common_separator - Detected input bit depth: 16-bit
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.06s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.99s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.97s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.96s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.00s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.93s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.97s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.11s/it]
+2026-05-10 00:39:27,057 - INFO - common_separator - Audio duration is 0.00 hours (10.00 seconds).
+2026-05-10 00:39:27,058 - INFO - common_separator - Using pydub for writing.
+2026-05-10 00:39:27,062 - INFO - common_separator - Writing output with 16-bit depth
+2026-05-10 00:39:27,505 - INFO - common_separator - Clearing input audio file paths, sources and stems...
+2026-05-10 00:39:27,505 - INFO - separator - Separation duration: 00:01:09
+2026-05-10 00:39:27,600 - INFO - separator - Processing chunk 16/19: C:\Users\justin\AppData\Local\Temp\audio-separator-
+chunks-f4avgtgb\chunk_0015.mp3
+2026-05-10 00:39:27,601 - INFO - separator - Starting separation process for audio_file_path: C:\Users\justin\AppData\Lo
+cal\Temp\audio-separator-chunks-f4avgtgb\chunk_0015.mp3
+2026-05-10 00:39:27,604 - INFO - common_separator - Input audio subtype: MPEG_LAYER_III
+2026-05-10 00:39:27,604 - WARNING - common_separator - Unknown audio subtype MPEG_LAYER_III, defaulting to 16-bit output
+2026-05-10 00:39:27,605 - INFO - common_separator - Detected input bit depth: 16-bit
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.94s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.06s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.03s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.94s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.96s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.00s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.91s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.98s/it]
+2026-05-10 00:40:35,863 - INFO - common_separator - Audio duration is 0.00 hours (10.00 seconds).
+2026-05-10 00:40:35,864 - INFO - common_separator - Using pydub for writing.
+2026-05-10 00:40:35,868 - INFO - common_separator - Writing output with 16-bit depth
+2026-05-10 00:40:36,398 - INFO - common_separator - Clearing input audio file paths, sources and stems...
+2026-05-10 00:40:36,399 - INFO - separator - Separation duration: 00:01:08
+2026-05-10 00:40:36,492 - INFO - separator - Processing chunk 17/19: C:\Users\justin\AppData\Local\Temp\audio-separator-
+chunks-f4avgtgb\chunk_0016.mp3
+2026-05-10 00:40:36,492 - INFO - separator - Starting separation process for audio_file_path: C:\Users\justin\AppData\Lo
+cal\Temp\audio-separator-chunks-f4avgtgb\chunk_0016.mp3
+2026-05-10 00:40:36,495 - INFO - common_separator - Input audio subtype: MPEG_LAYER_III
+2026-05-10 00:40:36,496 - WARNING - common_separator - Unknown audio subtype MPEG_LAYER_III, defaulting to 16-bit output
+2026-05-10 00:40:36,496 - INFO - common_separator - Detected input bit depth: 16-bit
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.99s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.05s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.03s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.91s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.96s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.93s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.93s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.90s/it]
+2026-05-10 00:41:44,671 - INFO - common_separator - Audio duration is 0.00 hours (10.00 seconds).
+2026-05-10 00:41:44,672 - INFO - common_separator - Using pydub for writing.
+2026-05-10 00:41:44,676 - INFO - common_separator - Writing output with 16-bit depth
+2026-05-10 00:41:45,123 - INFO - common_separator - Clearing input audio file paths, sources and stems...
+2026-05-10 00:41:45,123 - INFO - separator - Separation duration: 00:01:08
+2026-05-10 00:41:45,217 - INFO - separator - Processing chunk 18/19: C:\Users\justin\AppData\Local\Temp\audio-separator-
+chunks-f4avgtgb\chunk_0017.mp3
+2026-05-10 00:41:45,218 - INFO - separator - Starting separation process for audio_file_path: C:\Users\justin\AppData\Lo
+cal\Temp\audio-separator-chunks-f4avgtgb\chunk_0017.mp3
+2026-05-10 00:41:45,220 - INFO - common_separator - Input audio subtype: MPEG_LAYER_III
+2026-05-10 00:41:45,221 - WARNING - common_separator - Unknown audio subtype MPEG_LAYER_III, defaulting to 16-bit output
+2026-05-10 00:41:45,222 - INFO - common_separator - Detected input bit depth: 16-bit
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.03s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.23s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.98s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.03s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.02s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.08s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.98s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.93s/it]
+2026-05-10 00:42:54,385 - INFO - common_separator - Audio duration is 0.00 hours (10.00 seconds).
+2026-05-10 00:42:54,385 - INFO - common_separator - Using pydub for writing.
+2026-05-10 00:42:54,389 - INFO - common_separator - Writing output with 16-bit depth
+2026-05-10 00:42:54,846 - INFO - common_separator - Clearing input audio file paths, sources and stems...
+2026-05-10 00:42:54,847 - INFO - separator - Separation duration: 00:01:09
+2026-05-10 00:42:54,941 - INFO - separator - Processing chunk 19/19: C:\Users\justin\AppData\Local\Temp\audio-separator-
+chunks-f4avgtgb\chunk_0018.mp3
+2026-05-10 00:42:54,942 - INFO - separator - Starting separation process for audio_file_path: C:\Users\justin\AppData\Lo
+cal\Temp\audio-separator-chunks-f4avgtgb\chunk_0018.mp3
+2026-05-10 00:42:54,945 - INFO - common_separator - Input audio subtype: MPEG_LAYER_III
+2026-05-10 00:42:54,945 - WARNING - common_separator - Unknown audio subtype MPEG_LAYER_III, defaulting to 16-bit output
+2026-05-10 00:42:54,946 - INFO - common_separator - Detected input bit depth: 16-bit
+2026-05-10 00:42:54,949 - ERROR - common_separator - Audio file C:\Users\justin\AppData\Local\Temp\audio-separator-chunk
+s-f4avgtgb\chunk_0018.mp3 is empty or not valid
+2026-05-10 00:42:54,969 - ERROR - separator - Failed to process file E:\shorter_term_storage\Music\IncomingMusic\07 - Th
+e Black Keys - The Big Come Up - 07 - Leavin' Trunk.mp3: Audio file C:\Users\justin\AppData\Local\Temp\audio-separator-c
+hunks-f4avgtgb\chunk_0018.mp3 is empty or not valid
+Successfully processed 'E:\shorter_term_storage\Music\IncomingMusic\07 - The Black Keys - The Big Come Up - 07 - Leavin'
+ Trunk.mp3'. Output saved to 'C:\Users\justin\Dropbox\stems\leavintrunk'
+
+All tasks in the queue have been processed.
+Python script finished successfully.
+Script finished.
+**********************
+Windows PowerShell transcript end
+End time: 20260510004757
+**********************

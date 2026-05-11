@@ -1,0 +1,518 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20260510195901
+Username: DESKTOP-HS8GE90\justin
+RunAs User: DESKTOP-HS8GE90\justin
+Configuration Name: 
+Machine: DESKTOP-HS8GE90 (Microsoft Windows NT 10.0.19045.0)
+Host Application: powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\Users\justin\Documents\Coding\stemqueue\run_stemqueue.ps1
+Process ID: 18972
+PSVersion: 5.1.19041.6456
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.6456
+BuildVersion: 10.0.19041.6456
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\justin\Documents\Coding\stemqueue\run_log_20260510_195901.log
+Current working directory: C:\WINDOWS\system32
+Current working directory (after Set-Location): C:\Users\justin\Documents\Coding\stemqueue
+Activating virtual environment...
+Virtual environment activated.
+Upgrading pip within the virtual environment...
+Requirement already satisfied: pip in .\venv\lib\site-packages (26.1.1)
+pip upgraded successfully.
+Attempting to install/upgrade audio-separator to the latest available version...
+Requirement already satisfied: audio-separator in .\venv\lib\site-packages (0.44.1)
+Requirement already satisfied: beartype<0.19.0,>=0.18.5 in .\venv\lib\site-packages (from audio-separator) (0.18.5)
+Requirement already satisfied: diffq-fixed>=0.2 in .\venv\lib\site-packages (from audio-separator) (0.2.4)
+Requirement already satisfied: einops>=0.7 in .\venv\lib\site-packages (from audio-separator) (0.8.2)
+Requirement already satisfied: julius>=0.2 in .\venv\lib\site-packages (from audio-separator) (0.2.7)
+Requirement already satisfied: librosa>=0.10 in .\venv\lib\site-packages (from audio-separator) (0.11.0)
+Requirement already satisfied: ml_collections in .\venv\lib\site-packages (from audio-separator) (1.1.0)
+Requirement already satisfied: numpy>=2 in .\venv\lib\site-packages (from audio-separator) (2.2.6)
+Requirement already satisfied: onnx-weekly in .\venv\lib\site-packages (from audio-separator) (1.22.0.dev20260504)
+Requirement already satisfied: onnx2torch-py313>=1.6 in .\venv\lib\site-packages (from audio-separator) (1.6.0)
+Requirement already satisfied: pydub>=0.25 in .\venv\lib\site-packages (from audio-separator) (0.25.1)
+Requirement already satisfied: pyyaml in .\venv\lib\site-packages (from audio-separator) (6.0.3)
+Requirement already satisfied: requests>=2 in .\venv\lib\site-packages (from audio-separator) (2.33.1)
+Requirement already satisfied: resampy>=0.4 in .\venv\lib\site-packages (from audio-separator) (0.4.3)
+Requirement already satisfied: rotary-embedding-torch<0.7.0,>=0.6.1 in .\venv\lib\site-packages (from audio-separator) (
+0.6.5)
+Requirement already satisfied: samplerate==0.1.0 in .\venv\lib\site-packages (from audio-separator) (0.1.0)
+Requirement already satisfied: scipy<2.0.0,>=1.13.0 in .\venv\lib\site-packages (from audio-separator) (1.15.3)
+Requirement already satisfied: six>=1.16 in .\venv\lib\site-packages (from audio-separator) (1.17.0)
+Requirement already satisfied: soundfile>=0.12 in .\venv\lib\site-packages (from audio-separator) (0.13.1)
+Requirement already satisfied: torch>=2.3 in .\venv\lib\site-packages (from audio-separator) (2.11.0)
+Requirement already satisfied: tqdm in .\venv\lib\site-packages (from audio-separator) (4.67.3)
+Requirement already satisfied: cffi>=1.0.0 in .\venv\lib\site-packages (from samplerate==0.1.0->audio-separator) (2.0.0)
+
+Requirement already satisfied: pycparser in .\venv\lib\site-packages (from cffi>=1.0.0->samplerate==0.1.0->audio-separat
+or) (3.0)
+Requirement already satisfied: Cython in .\venv\lib\site-packages (from diffq-fixed>=0.2->audio-separator) (3.2.4)
+Requirement already satisfied: audioread>=2.1.9 in .\venv\lib\site-packages (from librosa>=0.10->audio-separator) (3.1.0
+)
+Requirement already satisfied: numba>=0.51.0 in .\venv\lib\site-packages (from librosa>=0.10->audio-separator) (0.65.1)
+Requirement already satisfied: scikit-learn>=1.1.0 in .\venv\lib\site-packages (from librosa>=0.10->audio-separator) (1.
+7.2)
+Requirement already satisfied: joblib>=1.0 in .\venv\lib\site-packages (from librosa>=0.10->audio-separator) (1.5.3)
+Requirement already satisfied: decorator>=4.3.0 in .\venv\lib\site-packages (from librosa>=0.10->audio-separator) (5.2.1
+)
+Requirement already satisfied: pooch>=1.1 in .\venv\lib\site-packages (from librosa>=0.10->audio-separator) (1.9.0)
+Requirement already satisfied: soxr>=0.3.2 in .\venv\lib\site-packages (from librosa>=0.10->audio-separator) (1.1.0)
+Requirement already satisfied: typing_extensions>=4.1.1 in .\venv\lib\site-packages (from librosa>=0.10->audio-separator
+) (4.15.0)
+Requirement already satisfied: lazy_loader>=0.1 in .\venv\lib\site-packages (from librosa>=0.10->audio-separator) (0.5)
+Requirement already satisfied: msgpack>=1.0 in .\venv\lib\site-packages (from librosa>=0.10->audio-separator) (1.1.2)
+Requirement already satisfied: packaging in .\venv\lib\site-packages (from lazy_loader>=0.1->librosa>=0.10->audio-separa
+tor) (26.2)
+Requirement already satisfied: llvmlite<0.48,>=0.47.0dev0 in .\venv\lib\site-packages (from numba>=0.51.0->librosa>=0.10
+->audio-separator) (0.47.0)
+Requirement already satisfied: torchvision>=0.9.0 in .\venv\lib\site-packages (from onnx2torch-py313>=1.6->audio-separat
+or) (0.26.0)
+Requirement already satisfied: platformdirs>=2.5.0 in .\venv\lib\site-packages (from pooch>=1.1->librosa>=0.10->audio-se
+parator) (4.9.6)
+Requirement already satisfied: charset_normalizer<4,>=2 in .\venv\lib\site-packages (from requests>=2->audio-separator)
+(3.4.7)
+Requirement already satisfied: idna<4,>=2.5 in .\venv\lib\site-packages (from requests>=2->audio-separator) (3.13)
+Requirement already satisfied: urllib3<3,>=1.26 in .\venv\lib\site-packages (from requests>=2->audio-separator) (2.7.0)
+Requirement already satisfied: certifi>=2023.5.7 in .\venv\lib\site-packages (from requests>=2->audio-separator) (2026.4
+.22)
+Requirement already satisfied: threadpoolctl>=3.1.0 in .\venv\lib\site-packages (from scikit-learn>=1.1.0->librosa>=0.10
+->audio-separator) (3.6.0)
+Requirement already satisfied: filelock in .\venv\lib\site-packages (from torch>=2.3->audio-separator) (3.29.0)
+Requirement already satisfied: setuptools<82 in .\venv\lib\site-packages (from torch>=2.3->audio-separator) (65.5.0)
+Requirement already satisfied: sympy>=1.13.3 in .\venv\lib\site-packages (from torch>=2.3->audio-separator) (1.14.0)
+Requirement already satisfied: networkx>=2.5.1 in .\venv\lib\site-packages (from torch>=2.3->audio-separator) (3.4.2)
+Requirement already satisfied: jinja2 in .\venv\lib\site-packages (from torch>=2.3->audio-separator) (3.1.6)
+Requirement already satisfied: fsspec>=0.8.5 in .\venv\lib\site-packages (from torch>=2.3->audio-separator) (2026.4.0)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in .\venv\lib\site-packages (from sympy>=1.13.3->torch>=2.3->audio-sep
+arator) (1.3.0)
+Requirement already satisfied: pillow!=8.3.*,>=5.3.0 in .\venv\lib\site-packages (from torchvision>=0.9.0->onnx2torch-py
+313>=1.6->audio-separator) (12.2.0)
+Requirement already satisfied: MarkupSafe>=2.0 in .\venv\lib\site-packages (from jinja2->torch>=2.3->audio-separator) (3
+.0.3)
+Requirement already satisfied: absl-py in .\venv\lib\site-packages (from ml_collections->audio-separator) (2.4.0)
+Requirement already satisfied: protobuf>=4.25.1 in .\venv\lib\site-packages (from onnx-weekly->audio-separator) (7.34.1)
+
+Requirement already satisfied: ml_dtypes>=0.5.0 in .\venv\lib\site-packages (from onnx-weekly->audio-separator) (0.5.4)
+Requirement already satisfied: colorama in .\venv\lib\site-packages (from tqdm->audio-separator) (0.4.6)
+audio-separator installed/upgraded successfully.
+Verifying installed audio-separator version...
+Installed audio-separator version:
+Listing all installed packages (pip freeze):
+absl-py==2.4.0
+audio-separator==0.44.1
+audioread==3.1.0
+beartype==0.18.5
+certifi==2026.4.22
+cffi==2.0.0
+charset-normalizer==3.4.7
+colorama==0.4.6
+coloredlogs==15.0.1
+Cython==3.2.4
+decorator==5.2.1
+diffq-fixed==0.2.4
+einops==0.8.2
+filelock==3.29.0
+flatbuffers==25.12.19
+fsspec==2026.4.0
+humanfriendly==10.0
+idna==3.13
+Jinja2==3.1.6
+joblib==1.5.3
+julius==0.2.7
+lazy-loader==0.5
+librosa==0.11.0
+llvmlite==0.47.0
+MarkupSafe==3.0.3
+ml_collections==1.1.0
+ml_dtypes==0.5.4
+mpmath==1.3.0
+msgpack==1.1.2
+networkx==3.4.2
+numba==0.65.1
+numpy==2.2.6
+onnx-weekly==1.22.0.dev20260504
+onnx2torch-py313==1.6.0
+onnxruntime==1.23.2
+packaging==26.2
+pillow==12.2.0
+platformdirs==4.9.6
+pooch==1.9.0
+protobuf==7.34.1
+pycparser==3.0
+pydub==0.25.1
+pyreadline3==3.5.4
+PyYAML==6.0.3
+requests==2.33.1
+resampy==0.4.3
+rotary-embedding-torch==0.6.5
+samplerate==0.1.0
+scikit-learn==1.7.2
+scipy==1.15.3
+six==1.17.0
+soundfile==0.13.1
+soxr==1.1.0
+sympy==1.14.0
+threadpoolctl==3.6.0
+torch==2.11.0
+torchvision==0.26.0
+tqdm==4.67.3
+typing_extensions==4.15.0
+urllib3==2.7.0
+Checking for onnxruntime installation...
+
+onnxruntime is already installed.
+WARNING: FFmpeg bin path not found at 'C:\ffmpeg\ffmpeg-master-latest-win64-gpl\bin'. Please verify your FFmpeg installation and update the script if necessary.
+Starting audio separation process...
+Python executable: C:\Users\justin\Documents\Coding\stemqueue\venv\Scripts\python.exe
+Main script: main.py
+Queue file: task_queue.json
+Successfully loaded queue from task_queue.json
+Starting audio separation queue with 2 tasks...
+
+--- Task 1/2 ---
+Processing 'E:\shorter_term_storage\Music\IncomingMusic\07 - The Black Keys - The Big Come Up - 07 - Leavin' Trunk.mp3'
+with model 'htdemucs_ft'...
+2026-05-10 19:59:17,236 - INFO - separator - Separator version 0.44.1 instantiating with output_dir: C:\Users\justin\Dro
+pbox\stems\leavintrunkwav, output_format: WAV
+2026-05-10 19:59:17,237 - INFO - separator - Using model directory from model_file_dir parameter: /tmp/audio-separator-m
+odels/
+2026-05-10 19:59:17,240 - INFO - separator - Operating System: Windows 10.0.19045
+2026-05-10 19:59:17,241 - INFO - separator - System: Windows Node: DESKTOP-HS8GE90 Release: 10 Machine: AMD64 Proc: Inte
+l64 Family 6 Model 60 Stepping 3, GenuineIntel
+2026-05-10 19:59:17,242 - INFO - separator - Python Version: 3.10.11
+2026-05-10 19:59:17,242 - INFO - separator - PyTorch Version: 2.11.0+cpu
+2026-05-10 19:59:17,423 - INFO - separator - FFmpeg installed: ffmpeg version 2026-05-06-git-f2e5eff3ff-essentials_build
+-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers
+2026-05-10 19:59:17,427 - DEBUG - separator - Python package: onnxruntime-gpu not installed
+2026-05-10 19:59:17,430 - DEBUG - separator - Python package: onnxruntime-silicon not installed
+2026-05-10 19:59:17,435 - DEBUG - separator - Python package: onnxruntime-directml not installed
+2026-05-10 19:59:17,437 - INFO - separator - ONNX Runtime CPU package installed with version: 1.23.2
+2026-05-10 19:59:17,439 - DEBUG - separator - Python package: torch_directml not installed
+2026-05-10 19:59:17,440 - INFO - separator - No hardware acceleration could be configured, running in CPU mode
+2026-05-10 19:59:17,441 - DEBUG - separator - File already exists at /tmp/audio-separator-models/download_checks.json, s
+kipping download
+2026-05-10 19:59:17,443 - DEBUG - separator - UVR model download list loaded
+2026-05-10 19:59:17,554 - DEBUG - separator - Model scores loaded
+2026-05-10 19:59:17,555 - DEBUG - separator - Audio-Separator model list loaded
+Found actual model filename 'htdemucs_ft.yaml' for friendly name 'htdemucs_ft' (Type: Demucs)
+2026-05-10 19:59:17,558 - INFO - separator - Loading model htdemucs_ft.yaml...
+2026-05-10 19:59:17,559 - DEBUG - separator - File already exists at /tmp/audio-separator-models/download_checks.json, s
+kipping download
+2026-05-10 19:59:17,559 - DEBUG - separator - UVR model download list loaded
+2026-05-10 19:59:17,575 - DEBUG - separator - Model scores loaded
+2026-05-10 19:59:17,576 - DEBUG - separator - Audio-Separator model list loaded
+2026-05-10 19:59:17,580 - DEBUG - separator - Searching for model_filename htdemucs_ft.yaml in supported_model_files_gro
+uped
+2026-05-10 19:59:17,581 - DEBUG - separator - Found matching model: Demucs v4: htdemucs_ft
+2026-05-10 19:59:17,581 - DEBUG - separator - File already exists at /tmp/audio-separator-models/f7e0c4bc-ba3fe64a.th, s
+kipping download
+2026-05-10 19:59:17,582 - DEBUG - separator - File already exists at /tmp/audio-separator-models/d12395a8-e57c48e6.th, s
+kipping download
+2026-05-10 19:59:17,582 - DEBUG - separator - File already exists at /tmp/audio-separator-models/92cfc3b6-ef3bcb9c.th, s
+kipping download
+2026-05-10 19:59:17,583 - DEBUG - separator - File already exists at /tmp/audio-separator-models/04573f0d-f3cf25b2.th, s
+kipping download
+2026-05-10 19:59:17,584 - DEBUG - separator - File already exists at /tmp/audio-separator-models/htdemucs_ft.yaml, skipp
+ing download
+2026-05-10 19:59:17,584 - DEBUG - separator - Model downloaded, friendly name: Demucs v4: htdemucs_ft, model_path: /tmp/
+audio-separator-models/htdemucs_ft.yaml
+2026-05-10 19:59:17,584 - DEBUG - separator - Loading model data from YAML at path /tmp/audio-separator-models/htdemucs_
+ft.yaml
+2026-05-10 19:59:17,587 - DEBUG - separator - Model data loaded from YAML file: {'models': ['f7e0c4bc', 'd12395a8', '92c
+fc3b6', '04573f0d'], 'weights': [[1.0, 0.0, 0.0, 0.0], [0.0, 1.0, 0.0, 0.0], [0.0, 0.0, 1.0, 0.0], [0.0, 0.0, 0.0, 1.0]]
+}
+2026-05-10 19:59:17,588 - DEBUG - separator - Importing module for model type Demucs: demucs_separator.DemucsSeparator
+2026-05-10 19:59:17,635 - DEBUG - separator - Instantiating separator class for model type Demucs: <class 'audio_separat
+or.separator.architectures.demucs_separator.DemucsSeparator'>
+2026-05-10 19:59:17,636 - DEBUG - common_separator - Common params: model_name=htdemucs_ft, model_path=/tmp/audio-separa
+tor-models/htdemucs_ft.yaml
+2026-05-10 19:59:17,637 - DEBUG - common_separator - Common params: output_dir=C:\Users\justin\Dropbox\stems\leavintrunk
+wav, output_format=WAV
+2026-05-10 19:59:17,639 - DEBUG - common_separator - Common params: normalization_threshold=0.9, amplification_threshold
+=0.0
+2026-05-10 19:59:17,639 - DEBUG - common_separator - Common params: enable_denoise=None, output_single_stem=None
+2026-05-10 19:59:17,640 - DEBUG - common_separator - Common params: invert_using_spec=False, sample_rate=44100
+2026-05-10 19:59:17,640 - DEBUG - common_separator - Common params: primary_stem_name=Vocals, secondary_stem_name=Instru
+mental
+2026-05-10 19:59:17,641 - DEBUG - common_separator - Common params: is_karaoke=False, is_bv_model=False, bv_model_rebala
+nce=0
+2026-05-10 19:59:17,644 - DEBUG - demucs_separator - Demucs arch params: segment_size=Default, segments_enabled=True
+2026-05-10 19:59:17,644 - DEBUG - demucs_separator - Demucs arch params: shifts=2, overlap=0.25
+2026-05-10 19:59:17,645 - INFO - demucs_separator - Demucs Separator initialisation complete
+2026-05-10 19:59:17,645 - DEBUG - separator - Loading model completed.
+2026-05-10 19:59:17,648 - INFO - separator - Load model duration: 00:00:00
+2026-05-10 19:59:17,650 - INFO - separator - Processing file: E:\shorter_term_storage\Music\IncomingMusic\07 - The Black
+ Keys - The Big Come Up - 07 - Leavin' Trunk.mp3
+2026-05-10 19:59:17,650 - INFO - separator - Starting separation process for audio_file_path: E:\shorter_term_storage\Mu
+sic\IncomingMusic\07 - The Black Keys - The Big Come Up - 07 - Leavin' Trunk.mp3
+2026-05-10 19:59:17,651 - DEBUG - separator - Normalization threshold set to 0.9, waveform will be lowered to this max a
+mplitude to avoid clipping.
+2026-05-10 19:59:17,651 - DEBUG - separator - Amplification threshold set to 0.0, waveform will be scaled up to this max
+ amplitude if below it.
+2026-05-10 19:59:17,652 - DEBUG - separator - Autocast unavailable.
+2026-05-10 19:59:17,652 - DEBUG - demucs_separator - Starting separation process...
+2026-05-10 19:59:17,653 - DEBUG - demucs_separator - Preparing mix...
+2026-05-10 19:59:17,653 - DEBUG - common_separator - Loading audio from file: E:\shorter_term_storage\Music\IncomingMusi
+c\07 - The Black Keys - The Big Come Up - 07 - Leavin' Trunk.mp3
+2026-05-10 19:59:17,655 - INFO - common_separator - Input audio subtype: MPEG_LAYER_III
+2026-05-10 19:59:17,655 - WARNING - common_separator - Unknown audio subtype MPEG_LAYER_III, defaulting to 16-bit output
+2026-05-10 19:59:17,655 - INFO - common_separator - Detected input bit depth: 16-bit
+2026-05-10 19:59:20,770 - DEBUG - common_separator - Audio loaded. Sample rate: 44100, Audio shape: (2, 7948288)
+2026-05-10 19:59:20,786 - DEBUG - common_separator - Audio file is valid and contains data.
+2026-05-10 19:59:20,786 - DEBUG - common_separator - Mix preparation completed.
+2026-05-10 19:59:20,789 - DEBUG - demucs_separator - Mix prepared for demixing. Shape: (2, 7948288)
+2026-05-10 19:59:20,790 - DEBUG - demucs_separator - Loading model for demixing...
+2026-05-10 19:59:26,345 - DEBUG - demucs_separator - Model loaded and set to evaluation mode.
+2026-05-10 19:59:26,346 - DEBUG - demucs_separator - Starting demixing process in demix_demucs...
+2026-05-10 19:59:26,532 - DEBUG - demucs_separator - Running model inference...
+100%|██████████████████████████████████████████████████████████████████████████████████| 31/31 [02:53<00:00,  5.61s/it]
+100%|██████████████████████████████████████████████████████████████████████████████████| 31/31 [02:05<00:00,  4.06s/it]
+100%|██████████████████████████████████████████████████████████████████████████████████| 31/31 [02:04<00:00,  4.01s/it]
+100%|██████████████████████████████████████████████████████████████████████████████████| 31/31 [02:03<00:00,  3.97s/it]
+100%|██████████████████████████████████████████████████████████████████████████████████| 31/31 [02:03<00:00,  3.98s/it]
+100%|██████████████████████████████████████████████████████████████████████████████████| 31/31 [02:05<00:00,  4.05s/it]
+100%|██████████████████████████████████████████████████████████████████████████████████| 31/31 [02:31<00:00,  4.89s/it]
+100%|██████████████████████████████████████████████████████████████████████████████████| 31/31 [02:33<00:00,  4.95s/it]
+2026-05-10 20:17:52,686 - DEBUG - common_separator - Running garbage collection...
+2026-05-10 20:17:53,299 - DEBUG - demucs_separator - Model and GPU cache cleared after demixing.
+2026-05-10 20:17:53,299 - DEBUG - demucs_separator - Processing output files...
+2026-05-10 20:17:53,300 - DEBUG - demucs_separator - Processing source array, source length is 4
+2026-05-10 20:17:53,300 - DEBUG - demucs_separator - Setting source map to 4-stem...
+2026-05-10 20:17:53,300 - DEBUG - demucs_separator - Processing for all stems...
+2026-05-10 20:17:53,300 - DEBUG - common_separator - Finalizing Bass stem processing and writing audio...
+C:\Users\justin\Documents\Coding\stemqueue\venv\lib\site-packages\audio_separator\separator\common_separator.py:292: Fut
+ureWarning: get_duration() keyword argument 'filename' has been renamed to 'path' in version 0.10.0.
+        This alias will be removed in version 1.0.
+  duration_seconds = librosa.get_duration(filename=self.audio_file_path)
+2026-05-10 20:17:54,616 - INFO - common_separator - Audio duration is 0.05 hours (180.23 seconds).
+2026-05-10 20:17:54,616 - WARNING - common_separator - Using soundfile for writing.
+2026-05-10 20:17:54,616 - DEBUG - common_separator - Entering write_audio_soundfile with stem_path: 07 - The Black Keys
+- The Big Come Up - 07 - Leavin' Trunk_(Bass)_htdemucs_ft.wav
+2026-05-10 20:17:54,702 - INFO - common_separator - Using input subtype for output: MPEG_LAYER_III
+2026-05-10 20:17:54,762 - DEBUG - common_separator - Audio data shape for soundfile: (7948288, 2)
+2026-05-10 20:17:54,764 - ERROR - common_separator - Error exporting audio file: Error opening "C:\\Users\\justin\\Dropb
+ox\\stems\\leavintrunkwav\\07 - The Black Keys - The Big Come Up - 07 - Leavin' Trunk_(Bass)_htdemucs_ft.wav": Supported
+ file format but unsupported encoding.
+2026-05-10 20:17:54,774 - DEBUG - common_separator - Finalizing Drums stem processing and writing audio...
+2026-05-10 20:17:54,782 - INFO - common_separator - Audio duration is 0.05 hours (180.23 seconds).
+2026-05-10 20:17:54,782 - WARNING - common_separator - Using soundfile for writing.
+2026-05-10 20:17:54,782 - DEBUG - common_separator - Entering write_audio_soundfile with stem_path: 07 - The Black Keys
+- The Big Come Up - 07 - Leavin' Trunk_(Drums)_htdemucs_ft.wav
+2026-05-10 20:17:54,882 - INFO - common_separator - Using input subtype for output: MPEG_LAYER_III
+2026-05-10 20:17:54,945 - DEBUG - common_separator - Audio data shape for soundfile: (7948288, 2)
+2026-05-10 20:17:54,946 - ERROR - common_separator - Error exporting audio file: Error opening "C:\\Users\\justin\\Dropb
+ox\\stems\\leavintrunkwav\\07 - The Black Keys - The Big Come Up - 07 - Leavin' Trunk_(Drums)_htdemucs_ft.wav": Supporte
+d file format but unsupported encoding.
+2026-05-10 20:17:54,952 - DEBUG - common_separator - Finalizing Other stem processing and writing audio...
+2026-05-10 20:17:54,958 - INFO - common_separator - Audio duration is 0.05 hours (180.23 seconds).
+2026-05-10 20:17:54,959 - WARNING - common_separator - Using soundfile for writing.
+2026-05-10 20:17:54,959 - DEBUG - common_separator - Entering write_audio_soundfile with stem_path: 07 - The Black Keys
+- The Big Come Up - 07 - Leavin' Trunk_(Other)_htdemucs_ft.wav
+2026-05-10 20:17:55,062 - INFO - common_separator - Using input subtype for output: MPEG_LAYER_III
+2026-05-10 20:17:55,124 - DEBUG - common_separator - Audio data shape for soundfile: (7948288, 2)
+2026-05-10 20:17:55,125 - ERROR - common_separator - Error exporting audio file: Error opening "C:\\Users\\justin\\Dropb
+ox\\stems\\leavintrunkwav\\07 - The Black Keys - The Big Come Up - 07 - Leavin' Trunk_(Other)_htdemucs_ft.wav": Supporte
+d file format but unsupported encoding.
+2026-05-10 20:17:55,131 - DEBUG - common_separator - Finalizing Vocals stem processing and writing audio...
+2026-05-10 20:17:55,137 - INFO - common_separator - Audio duration is 0.05 hours (180.23 seconds).
+2026-05-10 20:17:55,137 - WARNING - common_separator - Using soundfile for writing.
+2026-05-10 20:17:55,138 - DEBUG - common_separator - Entering write_audio_soundfile with stem_path: 07 - The Black Keys
+- The Big Come Up - 07 - Leavin' Trunk_(Vocals)_htdemucs_ft.wav
+2026-05-10 20:17:55,228 - INFO - common_separator - Using input subtype for output: MPEG_LAYER_III
+2026-05-10 20:17:55,288 - DEBUG - common_separator - Audio data shape for soundfile: (7948288, 2)
+2026-05-10 20:17:55,290 - ERROR - common_separator - Error exporting audio file: Error opening "C:\\Users\\justin\\Dropb
+ox\\stems\\leavintrunkwav\\07 - The Black Keys - The Big Come Up - 07 - Leavin' Trunk_(Vocals)_htdemucs_ft.wav": Support
+ed file format but unsupported encoding.
+2026-05-10 20:17:55,296 - DEBUG - common_separator - Running garbage collection...
+2026-05-10 20:17:55,408 - INFO - common_separator - Clearing input audio file paths, sources and stems...
+2026-05-10 20:17:55,408 - DEBUG - separator - Separation process completed.
+2026-05-10 20:17:55,411 - INFO - separator - Separation duration: 00:18:37
+Successfully processed 'E:\shorter_term_storage\Music\IncomingMusic\07 - The Black Keys - The Big Come Up - 07 - Leavin'
+ Trunk.mp3'. All default stems saved to 'C:\Users\justin\Dropbox\stems\leavintrunkwav'
+Processing custom stem output request: ['drums', 'vocals+bass+other']
+Warning: Requested single stem 'drums' not found. It will not be included in the final output.
+Warning: Individual stem 'vocals' not found for combination 'vocals+bass+other'. It will be omitted from the mix.
+Warning: Individual stem 'bass' not found for combination 'vocals+bass+other'. It will be omitted from the mix.
+Warning: Individual stem 'other' not found for combination 'vocals+bass+other'. It will be omitted from the mix.
+Warning: No valid individual stems found to mix for 'vocals+bass+other'. No mixed track will be created.
+Final output files for '07 - The Black Keys - The Big Come Up - 07 - Leavin' Trunk': []
+
+--- Task 2/2 ---
+Processing 'E:\shorter_term_storage\Music\IncomingMusic\07 - The Black Keys - The Big Come Up - 07 - Leavin' Trunk.mp3'
+with model 'htdemucs_ft'...
+2026-05-10 20:17:55,429 - INFO - separator - Separator version 0.44.1 instantiating with output_dir: C:\Users\justin\Dro
+pbox\stems\leavintrunk, output_format: MP3
+2026-05-10 20:17:55,430 - INFO - separator - Using model directory from model_file_dir parameter: /tmp/audio-separator-m
+odels/
+2026-05-10 20:17:55,432 - INFO - separator - Operating System: Windows 10.0.19045
+2026-05-10 20:17:55,433 - INFO - separator - System: Windows Node: DESKTOP-HS8GE90 Release: 10 Machine: AMD64 Proc: Inte
+l64 Family 6 Model 60 Stepping 3, GenuineIntel
+2026-05-10 20:17:55,433 - INFO - separator - Python Version: 3.10.11
+2026-05-10 20:17:55,434 - INFO - separator - PyTorch Version: 2.11.0+cpu
+2026-05-10 20:17:55,604 - INFO - separator - FFmpeg installed: ffmpeg version 2026-05-06-git-f2e5eff3ff-essentials_build
+-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers
+2026-05-10 20:17:55,606 - DEBUG - separator - Python package: onnxruntime-gpu not installed
+2026-05-10 20:17:55,608 - DEBUG - separator - Python package: onnxruntime-silicon not installed
+2026-05-10 20:17:55,612 - DEBUG - separator - Python package: onnxruntime-directml not installed
+2026-05-10 20:17:55,613 - INFO - separator - ONNX Runtime CPU package installed with version: 1.23.2
+2026-05-10 20:17:55,619 - DEBUG - separator - Python package: torch_directml not installed
+2026-05-10 20:17:55,619 - INFO - separator - No hardware acceleration could be configured, running in CPU mode
+2026-05-10 20:17:55,620 - DEBUG - separator - File already exists at /tmp/audio-separator-models/download_checks.json, s
+kipping download
+2026-05-10 20:17:55,622 - DEBUG - separator - UVR model download list loaded
+2026-05-10 20:17:55,640 - DEBUG - separator - Model scores loaded
+2026-05-10 20:17:55,642 - DEBUG - separator - Audio-Separator model list loaded
+Found actual model filename 'htdemucs_ft.yaml' for friendly name 'htdemucs_ft' (Type: Demucs)
+2026-05-10 20:17:55,648 - INFO - separator - Loading model htdemucs_ft.yaml...
+2026-05-10 20:17:55,648 - DEBUG - separator - File already exists at /tmp/audio-separator-models/download_checks.json, s
+kipping download
+2026-05-10 20:17:55,650 - DEBUG - separator - UVR model download list loaded
+2026-05-10 20:17:55,665 - DEBUG - separator - Model scores loaded
+2026-05-10 20:17:55,666 - DEBUG - separator - Audio-Separator model list loaded
+2026-05-10 20:17:55,668 - DEBUG - separator - Searching for model_filename htdemucs_ft.yaml in supported_model_files_gro
+uped
+2026-05-10 20:17:55,669 - DEBUG - separator - Found matching model: Demucs v4: htdemucs_ft
+2026-05-10 20:17:55,670 - DEBUG - separator - File already exists at /tmp/audio-separator-models/f7e0c4bc-ba3fe64a.th, s
+kipping download
+2026-05-10 20:17:55,672 - DEBUG - separator - File already exists at /tmp/audio-separator-models/d12395a8-e57c48e6.th, s
+kipping download
+2026-05-10 20:17:55,674 - DEBUG - separator - File already exists at /tmp/audio-separator-models/92cfc3b6-ef3bcb9c.th, s
+kipping download
+2026-05-10 20:17:55,674 - DEBUG - separator - File already exists at /tmp/audio-separator-models/04573f0d-f3cf25b2.th, s
+kipping download
+2026-05-10 20:17:55,675 - DEBUG - separator - File already exists at /tmp/audio-separator-models/htdemucs_ft.yaml, skipp
+ing download
+2026-05-10 20:17:55,676 - DEBUG - separator - Model downloaded, friendly name: Demucs v4: htdemucs_ft, model_path: /tmp/
+audio-separator-models/htdemucs_ft.yaml
+2026-05-10 20:17:55,677 - DEBUG - separator - Loading model data from YAML at path /tmp/audio-separator-models/htdemucs_
+ft.yaml
+2026-05-10 20:17:55,679 - DEBUG - separator - Model data loaded from YAML file: {'models': ['f7e0c4bc', 'd12395a8', '92c
+fc3b6', '04573f0d'], 'weights': [[1.0, 0.0, 0.0, 0.0], [0.0, 1.0, 0.0, 0.0], [0.0, 0.0, 1.0, 0.0], [0.0, 0.0, 0.0, 1.0]]
+}
+2026-05-10 20:17:55,684 - DEBUG - separator - Importing module for model type Demucs: demucs_separator.DemucsSeparator
+2026-05-10 20:17:55,686 - DEBUG - separator - Instantiating separator class for model type Demucs: <class 'audio_separat
+or.separator.architectures.demucs_separator.DemucsSeparator'>
+2026-05-10 20:17:55,686 - DEBUG - common_separator - Common params: model_name=htdemucs_ft, model_path=/tmp/audio-separa
+tor-models/htdemucs_ft.yaml
+2026-05-10 20:17:55,687 - DEBUG - common_separator - Common params: output_dir=C:\Users\justin\Dropbox\stems\leavintrunk
+, output_format=MP3
+2026-05-10 20:17:55,688 - DEBUG - common_separator - Common params: normalization_threshold=0.9, amplification_threshold
+=0.0
+2026-05-10 20:17:55,689 - DEBUG - common_separator - Common params: enable_denoise=None, output_single_stem=None
+2026-05-10 20:17:55,689 - DEBUG - common_separator - Common params: invert_using_spec=False, sample_rate=44100
+2026-05-10 20:17:55,690 - DEBUG - common_separator - Common params: primary_stem_name=Vocals, secondary_stem_name=Instru
+mental
+2026-05-10 20:17:55,690 - DEBUG - common_separator - Common params: is_karaoke=False, is_bv_model=False, bv_model_rebala
+nce=0
+2026-05-10 20:17:55,691 - DEBUG - demucs_separator - Demucs arch params: segment_size=Default, segments_enabled=True
+2026-05-10 20:17:55,692 - DEBUG - demucs_separator - Demucs arch params: shifts=2, overlap=0.25
+2026-05-10 20:17:55,695 - INFO - demucs_separator - Demucs Separator initialisation complete
+2026-05-10 20:17:55,698 - DEBUG - separator - Loading model completed.
+2026-05-10 20:17:55,698 - INFO - separator - Load model duration: 00:00:00
+2026-05-10 20:17:55,699 - INFO - separator - Processing file: E:\shorter_term_storage\Music\IncomingMusic\07 - The Black
+ Keys - The Big Come Up - 07 - Leavin' Trunk.mp3
+2026-05-10 20:17:55,700 - INFO - separator - Starting separation process for audio_file_path: E:\shorter_term_storage\Mu
+sic\IncomingMusic\07 - The Black Keys - The Big Come Up - 07 - Leavin' Trunk.mp3
+2026-05-10 20:17:55,701 - DEBUG - separator - Normalization threshold set to 0.9, waveform will be lowered to this max a
+mplitude to avoid clipping.
+2026-05-10 20:17:55,701 - DEBUG - separator - Amplification threshold set to 0.0, waveform will be scaled up to this max
+ amplitude if below it.
+2026-05-10 20:17:55,702 - DEBUG - separator - Autocast unavailable.
+2026-05-10 20:17:55,703 - DEBUG - demucs_separator - Starting separation process...
+2026-05-10 20:17:55,703 - DEBUG - demucs_separator - Preparing mix...
+2026-05-10 20:17:55,708 - DEBUG - common_separator - Loading audio from file: E:\shorter_term_storage\Music\IncomingMusi
+c\07 - The Black Keys - The Big Come Up - 07 - Leavin' Trunk.mp3
+2026-05-10 20:17:55,709 - INFO - common_separator - Input audio subtype: MPEG_LAYER_III
+2026-05-10 20:17:55,709 - WARNING - common_separator - Unknown audio subtype MPEG_LAYER_III, defaulting to 16-bit output
+2026-05-10 20:17:55,710 - INFO - common_separator - Detected input bit depth: 16-bit
+2026-05-10 20:17:56,470 - DEBUG - common_separator - Audio loaded. Sample rate: 44100, Audio shape: (2, 7948288)
+2026-05-10 20:17:56,485 - DEBUG - common_separator - Audio file is valid and contains data.
+2026-05-10 20:17:56,485 - DEBUG - common_separator - Mix preparation completed.
+2026-05-10 20:17:56,487 - DEBUG - demucs_separator - Mix prepared for demixing. Shape: (2, 7948288)
+2026-05-10 20:17:56,488 - DEBUG - demucs_separator - Loading model for demixing...
+2026-05-10 20:18:02,235 - DEBUG - demucs_separator - Model loaded and set to evaluation mode.
+2026-05-10 20:18:02,235 - DEBUG - demucs_separator - Starting demixing process in demix_demucs...
+2026-05-10 20:18:02,352 - DEBUG - demucs_separator - Running model inference...
+100%|██████████████████████████████████████████████████████████████████████████████████| 31/31 [02:06<00:00,  4.09s/it]
+100%|██████████████████████████████████████████████████████████████████████████████████| 31/31 [02:14<00:00,  4.34s/it]
+100%|██████████████████████████████████████████████████████████████████████████████████| 31/31 [02:04<00:00,  4.03s/it]
+100%|██████████████████████████████████████████████████████████████████████████████████| 31/31 [02:06<00:00,  4.08s/it]
+100%|██████████████████████████████████████████████████████████████████████████████████| 31/31 [02:03<00:00,  3.99s/it]
+100%|██████████████████████████████████████████████████████████████████████████████████| 31/31 [02:03<00:00,  3.97s/it]
+100%|██████████████████████████████████████████████████████████████████████████████████| 31/31 [02:02<00:00,  3.94s/it]
+100%|██████████████████████████████████████████████████████████████████████████████████| 31/31 [02:02<00:00,  3.95s/it]
+2026-05-10 20:34:48,977 - DEBUG - common_separator - Running garbage collection...
+2026-05-10 20:34:49,508 - DEBUG - demucs_separator - Model and GPU cache cleared after demixing.
+2026-05-10 20:34:49,508 - DEBUG - demucs_separator - Processing output files...
+2026-05-10 20:34:49,510 - DEBUG - demucs_separator - Processing source array, source length is 4
+2026-05-10 20:34:49,512 - DEBUG - demucs_separator - Setting source map to 4-stem...
+2026-05-10 20:34:49,513 - DEBUG - demucs_separator - Processing for all stems...
+2026-05-10 20:34:49,514 - DEBUG - common_separator - Finalizing Bass stem processing and writing audio...
+C:\Users\justin\Documents\Coding\stemqueue\venv\lib\site-packages\audio_separator\separator\common_separator.py:292: Fut
+ureWarning: get_duration() keyword argument 'filename' has been renamed to 'path' in version 0.10.0.
+        This alias will be removed in version 1.0.
+  duration_seconds = librosa.get_duration(filename=self.audio_file_path)
+2026-05-10 20:34:49,583 - INFO - common_separator - Audio duration is 0.05 hours (180.23 seconds).
+2026-05-10 20:34:49,584 - WARNING - common_separator - Using soundfile for writing.
+2026-05-10 20:34:49,586 - DEBUG - common_separator - Entering write_audio_soundfile with stem_path: 07 - The Black Keys
+- The Big Come Up - 07 - Leavin' Trunk_(Bass)_htdemucs_ft.mp3
+2026-05-10 20:34:49,698 - INFO - common_separator - Using input subtype for output: MPEG_LAYER_III
+2026-05-10 20:34:49,755 - DEBUG - common_separator - Audio data shape for soundfile: (7948288, 2)
+2026-05-10 20:34:51,806 - DEBUG - common_separator - Exported audio file successfully to C:\Users\justin\Dropbox\stems\l
+eavintrunk\07 - The Black Keys - The Big Come Up - 07 - Leavin' Trunk_(Bass)_htdemucs_ft.mp3 with subtype MPEG_LAYER_III
+2026-05-10 20:34:51,812 - DEBUG - common_separator - Finalizing Drums stem processing and writing audio...
+2026-05-10 20:34:51,818 - INFO - common_separator - Audio duration is 0.05 hours (180.23 seconds).
+2026-05-10 20:34:51,819 - WARNING - common_separator - Using soundfile for writing.
+2026-05-10 20:34:51,819 - DEBUG - common_separator - Entering write_audio_soundfile with stem_path: 07 - The Black Keys
+- The Big Come Up - 07 - Leavin' Trunk_(Drums)_htdemucs_ft.mp3
+2026-05-10 20:34:51,920 - INFO - common_separator - Using input subtype for output: MPEG_LAYER_III
+2026-05-10 20:34:51,983 - DEBUG - common_separator - Audio data shape for soundfile: (7948288, 2)
+2026-05-10 20:34:54,818 - DEBUG - common_separator - Exported audio file successfully to C:\Users\justin\Dropbox\stems\l
+eavintrunk\07 - The Black Keys - The Big Come Up - 07 - Leavin' Trunk_(Drums)_htdemucs_ft.mp3 with subtype MPEG_LAYER_II
+I
+2026-05-10 20:34:54,823 - DEBUG - common_separator - Finalizing Other stem processing and writing audio...
+2026-05-10 20:34:54,830 - INFO - common_separator - Audio duration is 0.05 hours (180.23 seconds).
+2026-05-10 20:34:54,830 - WARNING - common_separator - Using soundfile for writing.
+2026-05-10 20:34:54,831 - DEBUG - common_separator - Entering write_audio_soundfile with stem_path: 07 - The Black Keys
+- The Big Come Up - 07 - Leavin' Trunk_(Other)_htdemucs_ft.mp3
+2026-05-10 20:34:54,930 - INFO - common_separator - Using input subtype for output: MPEG_LAYER_III
+2026-05-10 20:34:54,992 - DEBUG - common_separator - Audio data shape for soundfile: (7948288, 2)
+2026-05-10 20:34:57,824 - DEBUG - common_separator - Exported audio file successfully to C:\Users\justin\Dropbox\stems\l
+eavintrunk\07 - The Black Keys - The Big Come Up - 07 - Leavin' Trunk_(Other)_htdemucs_ft.mp3 with subtype MPEG_LAYER_II
+I
+2026-05-10 20:34:57,830 - DEBUG - common_separator - Finalizing Vocals stem processing and writing audio...
+2026-05-10 20:34:57,837 - INFO - common_separator - Audio duration is 0.05 hours (180.23 seconds).
+2026-05-10 20:34:57,837 - WARNING - common_separator - Using soundfile for writing.
+2026-05-10 20:34:57,838 - DEBUG - common_separator - Entering write_audio_soundfile with stem_path: 07 - The Black Keys
+- The Big Come Up - 07 - Leavin' Trunk_(Vocals)_htdemucs_ft.mp3
+2026-05-10 20:34:57,934 - INFO - common_separator - Using input subtype for output: MPEG_LAYER_III
+2026-05-10 20:34:57,997 - DEBUG - common_separator - Audio data shape for soundfile: (7948288, 2)
+2026-05-10 20:34:59,989 - DEBUG - common_separator - Exported audio file successfully to C:\Users\justin\Dropbox\stems\l
+eavintrunk\07 - The Black Keys - The Big Come Up - 07 - Leavin' Trunk_(Vocals)_htdemucs_ft.mp3 with subtype MPEG_LAYER_I
+II
+2026-05-10 20:34:59,995 - DEBUG - common_separator - Running garbage collection...
+2026-05-10 20:35:00,114 - INFO - common_separator - Clearing input audio file paths, sources and stems...
+2026-05-10 20:35:00,114 - DEBUG - separator - Separation process completed.
+2026-05-10 20:35:00,116 - INFO - separator - Separation duration: 00:17:04
+Successfully processed 'E:\shorter_term_storage\Music\IncomingMusic\07 - The Black Keys - The Big Come Up - 07 - Leavin'
+ Trunk.mp3'. All default stems saved to 'C:\Users\justin\Dropbox\stems\leavintrunk'
+Processing custom stem output request: ['drums', 'vocals+bass+other']
+Warning: Requested single stem 'drums' not found. It will not be included in the final output.
+Warning: Individual stem 'vocals' not found for combination 'vocals+bass+other'. It will be omitted from the mix.
+Warning: Individual stem 'bass' not found for combination 'vocals+bass+other'. It will be omitted from the mix.
+Warning: Individual stem 'other' not found for combination 'vocals+bass+other'. It will be omitted from the mix.
+Warning: No valid individual stems found to mix for 'vocals+bass+other'. No mixed track will be created.
+Final output files for '07 - The Black Keys - The Big Come Up - 07 - Leavin' Trunk': []
+
+All tasks in the queue have been processed.
+Python script finished successfully.
+Script finished.
+**********************
+Windows PowerShell transcript end
+End time: 20260510204002
+**********************

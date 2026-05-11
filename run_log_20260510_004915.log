@@ -1,0 +1,38 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20260510004915
+Username: DESKTOP-HS8GE90\justin
+RunAs User: DESKTOP-HS8GE90\justin
+Configuration Name: 
+Machine: DESKTOP-HS8GE90 (Microsoft Windows NT 10.0.19045.0)
+Host Application: powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\Users\justin\Documents\Coding\stemqueue\run_stemqueue.ps1
+Process ID: 20728
+PSVersion: 5.1.19041.6456
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.6456
+BuildVersion: 10.0.19041.6456
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\justin\Documents\Coding\stemqueue\run_log_20260510_004915.log
+Current working directory: C:\WINDOWS\system32
+Current working directory (after Set-Location): C:\Users\justin\Documents\Coding\stemqueue
+Activating virtual environment...
+Virtual environment activated.
+Checking for audio-separator installation...
+
+audio-separator is already installed.
+Checking for onnxruntime installation...
+
+onnxruntime is already installed.
+WARNING: FFmpeg bin path not found at 'C:\ffmpeg\ffmpeg-master-latest-win64-gpl\bin'. Please verify your FFmpeg installation and update the script if necessary.
+Starting audio separation process...
+Python executable: C:\Users\justin\Documents\Coding\stemqueue\venv\Scripts\python.exe
+Main script: main.py
+Queue file: task_queue.json
+Error decoding JSON from task_queue.json: Expecting ',' delimiter: line 8 column 5 (char 294)
+The separation queue is empty. Please add tasks to process.
+Python script finished successfully.
+Script finished.

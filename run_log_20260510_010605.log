@@ -1,0 +1,137 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20260510010605
+Username: DESKTOP-HS8GE90\justin
+RunAs User: DESKTOP-HS8GE90\justin
+Configuration Name: 
+Machine: DESKTOP-HS8GE90 (Microsoft Windows NT 10.0.19045.0)
+Host Application: powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\Users\justin\Documents\Coding\stemqueue\run_stemqueue.ps1
+Process ID: 11596
+PSVersion: 5.1.19041.6456
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.6456
+BuildVersion: 10.0.19041.6456
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\justin\Documents\Coding\stemqueue\run_log_20260510_010605.log
+Current working directory: C:\WINDOWS\system32
+Current working directory (after Set-Location): C:\Users\justin\Documents\Coding\stemqueue
+Activating virtual environment...
+Virtual environment activated.
+Checking for audio-separator installation...
+
+audio-separator is already installed.
+Checking for onnxruntime installation...
+
+onnxruntime is already installed.
+WARNING: FFmpeg bin path not found at 'C:\ffmpeg\ffmpeg-master-latest-win64-gpl\bin'. Please verify your FFmpeg installation and update the script if necessary.
+Starting audio separation process...
+Python executable: C:\Users\justin\Documents\Coding\stemqueue\venv\Scripts\python.exe
+Main script: main.py
+Queue file: task_queue.json
+Successfully loaded queue from task_queue.json
+Starting audio separation queue with 1 tasks...
+
+--- Task 1/1 ---
+Processing 'E:\shorter_term_storage\Music\Phish\A Picture of Nectar\06 Manteca.mp3' with model 'htdemucs_ft'...
+2026-05-10 01:06:12,772 - INFO - separator - Separator version 0.44.1 instantiating with output_dir: C:\Users\justin\Dro
+pbox\stems\leavintrunk, output_format: MP3
+2026-05-10 01:06:12,772 - INFO - separator - Using model directory from model_file_dir parameter: /tmp/audio-separator-m
+odels/
+2026-05-10 01:06:12,773 - INFO - separator - Operating System: Windows 10.0.19045
+2026-05-10 01:06:12,773 - INFO - separator - System: Windows Node: DESKTOP-HS8GE90 Release: 10 Machine: AMD64 Proc: Inte
+l64 Family 6 Model 60 Stepping 3, GenuineIntel
+2026-05-10 01:06:12,773 - INFO - separator - Python Version: 3.10.11
+2026-05-10 01:06:12,774 - INFO - separator - PyTorch Version: 2.11.0+cpu
+2026-05-10 01:06:12,809 - INFO - separator - FFmpeg installed: ffmpeg version 2026-05-06-git-f2e5eff3ff-essentials_build
+-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers
+2026-05-10 01:06:12,816 - INFO - separator - ONNX Runtime CPU package installed with version: 1.23.2
+2026-05-10 01:06:12,818 - INFO - separator - No hardware acceleration could be configured, running in CPU mode
+Found actual model filename 'htdemucs_ft.yaml' for friendly name 'htdemucs_ft' (Type: Demucs)
+2026-05-10 01:06:12,908 - INFO - separator - Loading model htdemucs_ft.yaml...
+2026-05-10 01:06:13,001 - INFO - demucs_separator - Demucs Separator initialisation complete
+2026-05-10 01:06:13,001 - INFO - separator - Load model duration: 00:00:00
+2026-05-10 01:06:13,001 - INFO - separator - Processing file: E:\shorter_term_storage\Music\Phish\A Picture of Nectar\06
+ Manteca.mp3
+2026-05-10 01:06:13,908 - INFO - separator - File duration 29.4s exceeds chunk size 10s, using chunked processing
+2026-05-10 01:06:14,192 - INFO - audio_chunking - Splitting 29.4s audio into 3 chunks of 10.0s each
+2026-05-10 01:06:14,940 - INFO - separator - Processing chunk 1/3: C:\Users\justin\AppData\Local\Temp\audio-separator-ch
+unks-lm4kcp_2\chunk_0000.mp3
+2026-05-10 01:06:14,940 - INFO - separator - Starting separation process for audio_file_path: C:\Users\justin\AppData\Lo
+cal\Temp\audio-separator-chunks-lm4kcp_2\chunk_0000.mp3
+2026-05-10 01:06:14,941 - INFO - common_separator - Input audio subtype: MPEG_LAYER_III
+2026-05-10 01:06:14,941 - WARNING - common_separator - Unknown audio subtype MPEG_LAYER_III, defaulting to 16-bit output
+2026-05-10 01:06:14,942 - INFO - common_separator - Detected input bit depth: 16-bit
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.21s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:10<00:00,  5.22s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:12<00:00,  6.04s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:10<00:00,  5.12s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:09<00:00,  4.53s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.23s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:09<00:00,  4.55s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:10<00:00,  5.43s/it]
+2026-05-10 01:07:41,450 - INFO - common_separator - Audio duration is 0.00 hours (10.00 seconds).
+2026-05-10 01:07:41,450 - INFO - common_separator - Using pydub for writing.
+2026-05-10 01:07:41,454 - INFO - common_separator - Writing output with 16-bit depth
+2026-05-10 01:07:41,974 - INFO - common_separator - Clearing input audio file paths, sources and stems...
+2026-05-10 01:07:41,975 - INFO - separator - Separation duration: 00:01:27
+2026-05-10 01:07:42,076 - INFO - separator - Processing chunk 2/3: C:\Users\justin\AppData\Local\Temp\audio-separator-ch
+unks-lm4kcp_2\chunk_0001.mp3
+2026-05-10 01:07:42,077 - INFO - separator - Starting separation process for audio_file_path: C:\Users\justin\AppData\Lo
+cal\Temp\audio-separator-chunks-lm4kcp_2\chunk_0001.mp3
+2026-05-10 01:07:42,078 - INFO - common_separator - Input audio subtype: MPEG_LAYER_III
+2026-05-10 01:07:42,078 - WARNING - common_separator - Unknown audio subtype MPEG_LAYER_III, defaulting to 16-bit output
+2026-05-10 01:07:42,078 - INFO - common_separator - Detected input bit depth: 16-bit
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.15s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:10<00:00,  5.46s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:10<00:00,  5.22s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:09<00:00,  4.85s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.24s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.30s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.15s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:12<00:00,  6.06s/it]
+2026-05-10 01:09:04,052 - INFO - common_separator - Audio duration is 0.00 hours (10.00 seconds).
+2026-05-10 01:09:04,052 - INFO - common_separator - Using pydub for writing.
+2026-05-10 01:09:04,056 - INFO - common_separator - Writing output with 16-bit depth
+2026-05-10 01:09:05,419 - INFO - common_separator - Clearing input audio file paths, sources and stems...
+2026-05-10 01:09:05,419 - INFO - separator - Separation duration: 00:01:23
+2026-05-10 01:09:05,512 - INFO - separator - Processing chunk 3/3: C:\Users\justin\AppData\Local\Temp\audio-separator-ch
+unks-lm4kcp_2\chunk_0002.mp3
+2026-05-10 01:09:05,512 - INFO - separator - Starting separation process for audio_file_path: C:\Users\justin\AppData\Lo
+cal\Temp\audio-separator-chunks-lm4kcp_2\chunk_0002.mp3
+2026-05-10 01:09:05,526 - INFO - common_separator - Input audio subtype: MPEG_LAYER_III
+2026-05-10 01:09:05,526 - WARNING - common_separator - Unknown audio subtype MPEG_LAYER_III, defaulting to 16-bit output
+2026-05-10 01:09:05,526 - INFO - common_separator - Detected input bit depth: 16-bit
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:10<00:00,  5.32s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:10<00:00,  5.44s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:10<00:00,  5.21s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:13<00:00,  6.56s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:13<00:00,  6.75s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:10<00:00,  5.27s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:09<00:00,  4.96s/it]
+100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:10<00:00,  5.19s/it]
+2026-05-10 01:10:43,440 - INFO - common_separator - Audio duration is 0.00 hours (9.43 seconds).
+2026-05-10 01:10:43,440 - INFO - common_separator - Using pydub for writing.
+2026-05-10 01:10:43,444 - INFO - common_separator - Writing output with 16-bit depth
+2026-05-10 01:10:43,990 - INFO - common_separator - Clearing input audio file paths, sources and stems...
+2026-05-10 01:10:43,990 - INFO - separator - Separation duration: 00:01:38
+2026-05-10 01:10:44,098 - INFO - separator - Merging 3 chunks for stem: Drums
+2026-05-10 01:10:44,098 - INFO - audio_chunking - Merging 3 chunks into C:\Users\justin\Dropbox\stems\leavintrunk\06 Man
+teca_(Drums).mp3
+2026-05-10 01:10:44,695 - INFO - audio_chunking - Exporting merged audio (29.4s) to C:\Users\justin\Dropbox\stems\leavin
+trunk\06 Manteca_(Drums).mp3
+2026-05-10 01:10:45,474 - INFO - separator - Chunked processing completed. Output files: ['C:\\Users\\justin\\Dropbox\\s
+tems\\leavintrunk\\06 Manteca_(Drums).mp3']
+Successfully processed 'E:\shorter_term_storage\Music\Phish\A Picture of Nectar\06 Manteca.mp3'. Output saved to 'C:\Use
+rs\justin\Dropbox\stems\leavintrunk'
+
+All tasks in the queue have been processed.
+Python script finished successfully.
+Script finished.
+**********************
+Windows PowerShell transcript end
+End time: 20260510011547
+**********************
