@@ -181,13 +181,13 @@ def process_audio_file(task):
             files_to_remove = [] # Don't remove anything if keeping all
 
         # Clean up intermediate files that were not part of the final_output_paths
-        for path_to_remove in files_to_remove:
-            if path_to_remove and os.path.exists(path_to_remove):
-                try:
-                    os.remove(path_to_remove)
-                    print(f"Removed intermediate file: {path_to_remove}")
-                except Exception as e:
-                    print(f"Error removing intermediate file {path_to_remove}: {e}")
+        # for path_to_remove in files_to_remove:
+        #     if path_to_remove and os.path.exists(path_to_remove):
+        #         try:
+        #             os.remove(path_to_remove)
+        #             print(f"Removed intermediate file: {path_to_remove}")
+        #         except Exception as e:
+        #             print(f"Error removing intermediate file {path_to_remove}: {e}")
         
         print(f"Final output files for '{base_filename}': {final_output_paths}")
 
