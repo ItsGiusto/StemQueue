@@ -1,78 +1,8 @@
 [
   {
-    "input_file": "E:\\shorter_term_storage\\Music\\Led Zeppelin\\Led Zeppelin II\\1-01 Whole Lotta Love.mp3",
-    "model_name": "htdemucs_ft",
-    "output_dir": "C:\\Users\\justin\\Dropbox\\stems\\wholelottalove",
-    "stems": ["drums", "vocals+bass+other"],
-    "output_format": "MP3"
-  },
-  {
-    "input_file": "E:\\shorter_term_storage\\Music\\Led Zeppelin\\Led Zeppelin II\\2-03 Ramble On.mp3",
-    "model_name": "htdemucs_ft",
-    "output_dir": "C:\\Users\\justin\\Dropbox\\stems\\rambleon",
-    "stems": ["drums", "vocals+bass+other"],
-    "output_format": "MP3"
-  },
-  {
-    "input_file": "E:\\shorter_term_storage\\Music\\Led Zeppelin\\Led Zeppelin II\\2-04 Moby Dick.mp3",
-    "model_name": "htdemucs_ft",
-    "output_dir": "C:\\Users\\justin\\Dropbox\\stems\\mobydick",
-    "stems": ["drums", "vocals+bass+other"],
-    "output_format": "MP3"
-  },
-  {
-    "input_file": "E:\\shorter_term_storage\\Music\\Jimi Hendrix\\Band Of Gypsys\\01 Who Knows.mp3",
-    "model_name": "htdemucs_ft",
-    "output_dir": "C:\\Users\\justin\\Dropbox\\stems\\whoknows",
-    "stems": ["drums", "vocals+bass+other"],
-    "output_format": "MP3"
-  },
-  {
-    "input_file": "E:\\shorter_term_storage\\Music\\Jimi Hendrix\\Band Of Gypsys\\02 Machine Gun.mp3",
-    "model_name": "htdemucs_ft",
-    "output_dir": "C:\\Users\\justin\\Dropbox\\stems\\machinegun",
-    "stems": ["drums", "vocals+bass+other"],
-    "output_format": "MP3"
-  },
-  {
-    "input_file": "E:\\shorter_term_storage\\Music\\Jimi Hendrix\\Band Of Gypsys\\03 Changes.mp3",
-    "model_name": "htdemucs_ft",
-    "output_dir": "C:\\Users\\justin\\Dropbox\\stems\\changes",
-    "stems": ["drums", "vocals+bass+other"],
-    "output_format": "MP3"
-  },
-  {
-    "input_file": "E:\\shorter_term_storage\\Music\\Jimi Hendrix\\Band Of Gypsys\\04 Power To Love.mp3",
-    "model_name": "htdemucs_ft",
-    "output_dir": "C:\\Users\\justin\\Dropbox\\stems\\powertolove",
-    "stems": ["drums", "vocals+bass+other"],
-    "output_format": "MP3"
-  },
-  {
-    "input_file": "E:\\shorter_term_storage\\Music\\Jimi Hendrix\\Band Of Gypsys\\05 Message To Love.mp3",
-    "model_name": "htdemucs_ft",
-    "output_dir": "C:\\Users\\justin\\Dropbox\\stems\\messagetolove",
-    "stems": ["drums", "vocals+bass+other"],
-    "output_format": "MP3"
-  },
-  {
-    "input_file": "E:\\shorter_term_storage\\Music\\Jimi Hendrix\\Band Of Gypsys\\06 We Gotta Live Together.mp3",
-    "model_name": "htdemucs_ft",
-    "output_dir": "C:\\Users\\justin\\Dropbox\\stems\\wegottalive",
-    "stems": ["drums", "vocals+bass+other"],
-    "output_format": "MP3"
-  },
-  {
     "input_file": "E:\\shorter_term_storage\\Music\\Jimi Hendrix\\Electric Ladyland\\07 Come On (Let The Good Times Roll).mp3",
     "model_name": "htdemucs_ft",
-    "output_dir": "C:\\Users\\justin\\Dropbox\\stems\\comeon",
-    "stems": ["drums", "vocals+bass+other"],
-    "output_format": "MP3"
-  },
-  {
-    "input_file": "E:\\shorter_term_storage\\Music\\IncomingMusic\\03 - The Black Keys - The Big Come Up - 03 - I'll Be Your Man.mp3",
-    "model_name": "htdemucs_ft",
-    "output_dir": "C:\\Users\\justin\\Dropbox\\stems\\illbeyourman",
+    "output_dir": "C:\\Users\\justin\\Dropbox\\stems\\jimihendrix_comeon",
     "stems": ["drums", "vocals+bass+other"],
     "output_format": "MP3"
   }

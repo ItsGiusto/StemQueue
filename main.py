@@ -52,12 +52,10 @@ def _get_stem_path_by_type(output_files_list, stem_type_lower):
     for f_path in output_files_list:
         base_name = os.path.basename(f_path)
         logging.debug(f"  [_get_stem_path_by_type] Checking file: '{base_name}'")
-        # Robust regex to capture content inside the last parentheses before the extension
-        # This handles patterns like "(StemType).ext" or "(StemType)_ModelName.ext"
-        # The pattern looks for (anything_not_a_closing_paren) followed by )
-        # Then it allows for any characters that are not a dot (like _ModelName)
-        # Then it looks for a literal dot and one or more non-dot characters until the end of the string (the extension)
-        stem_name_match = re.search(r'\(([^)]+)\)[^.]*\.[^.]+$', base_name)
+        # Corrected regex: target the LAST set of parentheses before the extension
+        # It looks for '_(STEM_TYPE)' followed by an optional model name and then the file extension.
+        # This regex specifically targets the pattern where the stem name is preceded by an underscore and an opening parenthesis.
+        stem_name_match = re.search(r'_\(([^)]+)\)_?[^.]*\.[^.]+$', base_name)
         if stem_name_match:
             extracted_stem_name = stem_name_match.group(1).lower()
             logging.debug(f"    [_get_stem_path_by_type] Extracted stem name: '{extracted_stem_name}' from '{base_name}'")
